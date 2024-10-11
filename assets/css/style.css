@@ -37,6 +37,7 @@
 ------------------------------------------------------------- */
 #main-title{
     font-size: 5rem !important;
+    font-weight: bold;
 }
 #main-title2{
     font-size: 1.3rem;
@@ -1156,6 +1157,173 @@
     font-size: 0.99rem;
 }
 
+/*------- 로그인 --------*/
+
+.login-section,.find-email-section,.find-password-section {
+    background-color: white;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box,.email-box,.password-box {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 ,.email-box h2,.password-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4CAF50; /* 초록색 텍스트 */
+}
+
+.login-form-group, .find-email-form-group ,.find-password-form-group {
+    margin-bottom: 20px;
+}
+
+.login-form-group input,.find-email-form-group input,.find-password-form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-options ,.find-email-option,.find-password-option{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 20px;
+}
+#find_id_1{
+    padding-right: 5px;
+}
+#sign_up_1{
+    padding-left: 5px;
+}
+#find-password, #find-email{
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+
+/*.login-options label, .login-options a,.find-email-option a,.find-password-option a {*/
+/*    font-size: 14px;*/
+/*    color: #666;*/
+/*}*/
+
+.login-options a  {
+    text-decoration: none;
+    color: #4CAF50 !important; /* 초록색 링크 */
+}
+#find-email,#find-password{
+    color: #4CAF50 !important;
+}
+
+.login-options a:hover,.find-email-option a:hover,.find-password-option a:hover {
+    text-decoration: underline ;
+}
+
+.btn {
+    background-color: #4CAF50; /* 초록색 버튼 */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.login-box p, .email-box p, .password-box p {
+    margin-top: 20px;
+}
+
+.login-box a ,.email-box a ,.password-box a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.login-box a:hover ,.email-box a:hover,.password-box a:hover{
+    text-decoration: underline;
+}
+
+/*-----회원 가입 -----*/
+.signup-section {
+    background-color: white;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-box {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.signup-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4CAF50; /* 초록색 텍스트 */
+}
+
+.signup-form-group {
+    margin-bottom: 20px;
+}
+
+.signup-form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #4CAF50; /* 초록색 버튼 */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.signup-box p {
+    margin-top: 20px;
+}
+
+.signup-box a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+}
+
+#login_1{
+    padding-left: 5px;
+}
+
+
 
 
 
@@ -1174,9 +1342,10 @@
     clip-path: inset(0 30% 0 0);
 
 }
-.highlight{
-    color: #A5F775;
-}
+/*.highlight{*/
+/*    color: #FFFFFF;*/
+
+/*}*/
 
 
 /*--------------------------------------------------------------
@@ -3156,7 +3325,7 @@ h6 {
     right: 0;
     height: 23px;
     width: 365px;
-    background: url(../images/icon/line1.png);
+    /*background: url(../images/icon/line1.png);*/
     background-repeat: no-repeat;
     content: "";
     margin:2px;
