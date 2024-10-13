@@ -1013,7 +1013,9 @@
 #delete-notice1,#delete-notice2,#delete-notice3,#delete-notice4 {
     background-color: #FF6347; /* 토마토색 */
 }
-
+#delete-notice1 a,#delete-notice2 a,#delete-notice3 a,#delete-notice4 a {
+    color: white !important;
+}
 #back-notice1,#back-notice2,#back-notice3,#back-notice4 {
     background-color: #8FBC8F; /* 연한 녹색 */
 }
@@ -1322,6 +1324,7 @@
 #login_1{
     padding-left: 5px;
 }
+
 
 
 

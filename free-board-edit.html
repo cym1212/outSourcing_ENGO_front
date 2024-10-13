@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>한국 환경협회</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
@@ -12,10 +13,7 @@
     <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
     <!-- Fonts-->
-    <!--    <link-->
-<!--            href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"-->
-<!--            rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">-->
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
     <!-- Css-->
     <link rel="stylesheet" href="assets/css/animate.min.css">
@@ -59,9 +57,7 @@
                     <a href="mailto:gislmh@naver.com"><span class="icon-message"></span>gislmh@naver.com</a>
                     <a ><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
-                <!--                <div class="topbar-one__middle">-->
 
-                <!--                </div>-->
                 <div class="topbar-one__right">
                     <div class="topbar-one__social">
                         <a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -81,15 +77,11 @@
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
                         </a>
-                        <!--                            <a href="#" class="main-nav__search search-popup__toggler"><i-->
-                        <!--                                    class="icon-magnifying-glass"></i></a>-->
-                        <!--                            <a href="#" class="side-menu__toggler">-->
-                        <!--                                <i class="fa fa-bars"></i>-->
-                        <!--                            </a>-->
+
                     </div>
                     <div class="main-nav__main-navigation">
                         <ul class=" main-nav__navigation-box">
-                            <li class="dropdown current">
+                            <li class="dropdown">
                                 <a href="greeting.html">협회 소개</a>
                                 <ul>
                                     <li><a href="greeting.html">인사말</a></li>
@@ -97,15 +89,7 @@
                                     <li><a href="organization-chart.html">조직도</a></li>
                                     <li><a href="vision.html">협회비전</a></li>
                                     <li><a href="ci.html">협회 CI</a></li>
-                                    <!--                                        <li class="dropdown"><a href="#">Header Versions</a>-->
-                                    <!--                                            <ul>-->
-                                    <!--                                                <li><a href="index.html">Header 01</a></li>-->
-                                    <!--                                                <li><a href="index2.html">Header 02</a></li>-->
-                                    <!--                                                <li><a href="index3.html">Header 03</a></li>-->
-                                    <!--                                                <li><a href="index4.html">Header 04</a></li>-->
-                                    <!--                                                <li><a href="index5.html">Header 05</a></li>-->
-                                    <!--                                            </ul>&lt;!&ndash; /.sub-menu &ndash;&gt;-->
-                                    <!--                                        </li>-->
+
                                 </ul><!-- /.sub-menu -->
                             </li>
                             <li class="dropdown">
@@ -117,7 +101,7 @@
                                     <li><a href="csr-consulting.html">기업 사회 공헌 컨설팅</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown current">
                                 <a href="notice.html">커뮤니티</a>
                                 <ul>
                                     <li><a href="notice.html">공지사항</a></li>
@@ -142,26 +126,15 @@
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
                                     <li><a href="login.html">로그인</a></li>
+                                    <li><a id="logout" href="">로그 아웃</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
 
-                                <!--                                    <ul>-->
-                                <!--                                        <li><a href="news.html">News</a></li>-->
-                                <!--                                        <li><a href="news_detail.html">News Details</a></li>-->
-                                <!--                                    </ul>&lt;!&ndash; /.sub-menu &ndash;&gt;-->
-                            </li>
-                            <!--                                <li>-->
-                            <!--                                    <a href="contact.html">Contact</a>-->
-                            <!--                                </li>-->
                         </ul>
                     </div><!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
-                        <!--                            <div class="icon_cart_box">-->
-                        <!--                                <a href="cart.html">-->
-                        <!--                                    <span class="icon-shopping-cart"></span>-->
-                        <!--                                </a>-->
-                        <!--                            </div>-->
+
                     </div>
                 </div>
             </nav>
@@ -172,11 +145,7 @@
         <div class="container">
             <p>21세기 친환경 한국을 향한 꿈</p>
             <h2>커뮤니티</h2>
-<!--            <ul class="thm-breadcrumb list-unstyled">-->
-<!--                <li><a href="index.html">Home</a></li>-->
-<!--                <li><a href="" class="shop_style">Pages</a></li>-->
-<!--                <li><span>Why Choose us</span></li>-->
-<!--            </ul>-->
+
         </div>
     </section>
 
@@ -185,16 +154,13 @@
             <h2 id="introduction">자유게시판</h2>
             <h2 id="edit-title2">게시글 수정</h2>
 
-            <form id="edit-form2" action="submit_edit_notice.html" method="post">
+            <form id="edit-form2" >
                 <div class="form-group2">
                     <label for="title">제목</label>
                     <input type="text" id="title" name="title" value="기존 제목" required placeholder="제목을 입력하세요" />
                 </div>
 
-                <div class="form-group2">
-                    <label for="author">작성자</label>
-                    <input type="text" id="author" name="author" value="기존 작성자" required placeholder="작성자를 입력하세요" />
-                </div>
+
 
                 <div class="form-group2">
                     <label for="content">내용</label>
@@ -203,279 +169,11 @@
 
                 <div class="form-group2">
                     <button type="submit" id="submit-edit2">수정 완료</button>
-                    <a href="notice-details.html" id="cancel-edit2">취소</a>
+                    <a href="free-board-details.html" id="cancel-edit2">취소</a>
                 </div>
             </form>
         </div>
     </section>
-
-<!--    <section class="testimonials-three">-->
-<!--        <div class="container">-->
-<!--            <div class="block-title text-center">-->
-<!--                <p>testimonails</p>-->
-<!--                <h3>What people say</h3>-->
-<!--                <div class="leaf">-->
-<!--                    <img src="assets/images/resources/leaf.png" alt="">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="testimonials-three__carousel thm__owl-carousel light-dots owl-carousel owl-theme"-->
-<!--                 data-options='{"nav": false, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 700, "dots": false, "margin": 30, "loop": true, "responsive": { "0": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "767": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "991": { "items": 2 }, "1199": { "items": 2 }, "1200": { "items": 3 } }}'>-->
-<!--                <div class="item">-->
-<!--                    <div class="testimonials-three__single">-->
-<!--                        <div class="testimonials-three__content">-->
-<!--                            <div class="testimonials-three_icon">-->
-<!--                                <img src="assets/images/shapes/testi-qoute-3-1.png" alt="">-->
-<!--                            </div>-->
-<!--                            <p>There are many variations of passages of lorem ipsum but the majority have alteration-->
-<!--                                in some form, by randomised words look.</p>-->
-<!--                        </div>-->
-<!--                        <div class="testimonials-three__info">-->
-<!--                            <img src="assets/images/testimonials/testimonial-3-img-1.png" alt="">-->
-<!--                            <h3>Kevin Smith</h3>-->
-<!--                            <p>founder</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <div class="testimonials-three__single">-->
-<!--                        <div class="testimonials-three__content">-->
-<!--                            <div class="testimonials-three_icon">-->
-<!--                                <img src="assets/images/shapes/testi-qoute-3-1.png" alt="">-->
-<!--                            </div>-->
-<!--                            <p>There are many variations of passages of lorem ipsum but the majority have alteration-->
-<!--                                in some form, by randomised words look.</p>-->
-<!--                        </div>-->
-<!--                        <div class="testimonials-three__info">-->
-<!--                            <img src="assets/images/testimonials/testimonial-3-img-2.png" alt="">-->
-<!--                            <h3>jessica brown</h3>-->
-<!--                            <p>founder</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="item">-->
-<!--                    <div class="testimonials-three__single">-->
-<!--                        <div class="testimonials-three__content">-->
-<!--                            <div class="testimonials-three_icon">-->
-<!--                                <img src="assets/images/shapes/testi-qoute-3-1.png" alt="">-->
-<!--                            </div>-->
-<!--                            <p>There are many variations of passages of lorem ipsum but the majority have alteration-->
-<!--                                in some form, by randomised words look.</p>-->
-<!--                        </div>-->
-<!--                        <div class="testimonials-three__info">-->
-<!--                            <img src="assets/images/testimonials/testimonial-3-img-3.png" alt="">-->
-<!--                            <h3>daniyal coper</h3>-->
-<!--                            <p>founder</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--    <section class="benefits why_choose_us_benefits">-->
-<!--        <div class="benefits_bg" style="background-image: url(assets/images/resources/benifits_bg.png)"></div>-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-xl-4">-->
-<!--                    <div class="block-title text-left">-->
-<!--                        <p>Our benefits</p>-->
-<!--                        <h3>Agriculture & Eco<br>Farming</h3>-->
-<!--                        <div class="leaf">-->
-<!--                            <img src="assets/images/resources/leaf.png" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xl-8">-->
-<!--                    <div class="benefits_text">-->
-<!--                        <p>There are many variations of passages of available but the majority have suffered-->
-<!--                            alteration in some form, by injected humou or randomised words which don't look even-->
-<!--                            slightly believable. There are many variations of passages of available but the majority-->
-<!--                            have suffered alteration in some form, by injected humou or randomised words which don't-->
-<!--                            look even slightly believable.</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="benefits_bottom_part">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-xl-3 col-lg-3 col-md-6">-->
-<!--                        <div class="benefits_single wow fadeInUp" data-wow-delay="300ms">-->
-<!--                            <div class="icon-box">-->
-<!--                                <span class="icon-tractor"></span>-->
-<!--                            </div>-->
-<!--                            <h3>We Use New technology</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-xl-3 col-lg-3 col-md-6">-->
-<!--                        <div class="benefits_single wow fadeInUp" data-wow-delay="600ms">-->
-<!--                            <div class="icon-box">-->
-<!--                                <span class="icon-cart"></span>-->
-<!--                            </div>-->
-<!--                            <h3>professional farmers</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-xl-3 col-lg-3 col-md-6">-->
-<!--                        <div class="benefits_single wow fadeInUp" data-wow-delay="900ms">-->
-<!--                            <div class="icon-box">-->
-<!--                                <span class="icon-watering-can"></span>-->
-<!--                            </div>-->
-<!--                            <h3>We’re certified company</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="col-xl-3 col-lg-3 col-md-6">-->
-<!--                        <div class="benefits_single wow fadeInUp" data-wow-delay="1200ms">-->
-<!--                            <div class="icon-box">-->
-<!--                                <span class="icon-log"></span>-->
-<!--                            </div>-->
-<!--                            <h3>We deliver everywhere</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--    <section class="why_choose_one">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-xl-6 col-lg-6">-->
-<!--                    <div class="why_choose_one_left_content">-->
-<!--                        <div class="block-title text-left">-->
-<!--                            <p>Why Choose us</p>-->
-<!--                            <h3>Better agriculture for<br>better future</h3>-->
-<!--                            <div class="leaf">-->
-<!--                                <img src="assets/images/resources/leaf.png" alt="">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <ul class="why_choose_list list-unstyled">-->
-<!--                            <li>-->
-<!--                                <div class="choose_count">-->
-<!--                                    <h2>01</h2>-->
-<!--                                </div>-->
-<!--                                <div class="choose_text">-->
-<!--                                    <p>Solution for small and large businesses voluptatem<br>accusantium doloremque-->
-<!--                                        laudantium</p>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="choose_count">-->
-<!--                                    <h2>01</h2>-->
-<!--                                </div>-->
-<!--                                <div class="choose_text">-->
-<!--                                    <p>Solution for small and large businesses voluptatem<br>accusantium doloremque-->
-<!--                                        laudantium</p>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="choose_count">-->
-<!--                                    <h2>01</h2>-->
-<!--                                </div>-->
-<!--                                <div class="choose_text">-->
-<!--                                    <p>Solution for small and large businesses voluptatem<br>accusantium doloremque-->
-<!--                                        laudantium</p>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                        <div class="why_choose_btn">-->
-<!--                            <a href="" class="thm-btn">Discover More</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xl-6 col-lg-6">-->
-<!--                    <div class="why_choose_image_top">-->
-<!--                        <div class="why_choose_image"-->
-<!--                             style="background-image: url(assets/images/resources/why_choose1_img-1.jpg)">-->
-
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--    <section class="company_solutions">-->
-<!--        <div class="container">-->
-<!--            <div class="block-title text-center">-->
-<!--                <p>company solutions</p>-->
-<!--                <h3>Independently Owned</h3>-->
-<!--                <div class="leaf">-->
-<!--                    <img src="assets/images/resources/leaf.png" alt="">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-xl-4 col-lg-4">-->
-<!--                    <div class="company_solutions_single">-->
-<!--                        <div class="company_solutions_image">-->
-<!--                            <img src="assets/images/resources/com_solutions_img-1.jpg" alt="">-->
-<!--                        </div>-->
-<!--                        <h2>Harvest Innovations</h2>-->
-<!--                        <p>There are many variations of passages of available, but the majority have in some form,-->
-<!--                            by humour words which don't look believable.</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xl-4 col-lg-4">-->
-<!--                    <div class="company_solutions_single">-->
-<!--                        <div class="company_solutions_image">-->
-<!--                            <img src="assets/images/resources/com_solutions_img-2.jpg" alt="">-->
-<!--                        </div>-->
-<!--                        <h2>Agriculture farming</h2>-->
-<!--                        <p>There are many variations of passages of available, but the majority have in some form,-->
-<!--                            by humour words which don't look believable.</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xl-4 col-lg-4">-->
-<!--                    <div class="company_solutions_single">-->
-<!--                        <div class="company_solutions_image">-->
-<!--                            <img src="assets/images/resources/com_solutions_img-3.jpg" alt="">-->
-<!--                        </div>-->
-<!--                        <h2>organic solutions</h2>-->
-<!--                        <p>There are many variations of passages of available, but the majority have in some form,-->
-<!--                            by humour words which don't look believable.</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-<!--    <div class="brand-one brand-four">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-xl-12">-->
-<!--                    <div class="brand-one-carousel owl-carousel">-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-1.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-2.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-3.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-4.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-5.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-1.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-2.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-3.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-4.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                        <div class="single_brand_item">-->
-<!--                            <a href="#"><img src="assets/images/resources/brand-1-5.png" alt="brand"></a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 
     <div class="site-footer_bottom">
         <div class="container">
@@ -493,53 +191,6 @@
 
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
-
-<div class="side-menu__block">
-
-
-    <div class="side-menu__block-overlay custom-cursor__overlay">
-        <div class="cursor"></div>
-        <div class="cursor-follower"></div>
-    </div><!-- /.side-menu__block-overlay -->
-    <div class="side-menu__block-inner ">
-        <div class="side-menu__top justify-content-end">
-
-            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                    src="assets/images/shapes/close-1-1.png" alt=""></a>
-        </div><!-- /.side-menu__top -->
-
-
-        <nav class="mobile-nav__container">
-            <!-- content is loading via js -->
-        </nav>
-        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
-        <div class="side-menu__content">
-            <p><a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a> <br> <a href="tel:888-999-0000">888 999
-                0000</a></p>
-            <div class="side-menu__social">
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-            </div>
-        </div><!-- /.side-menu__content -->
-    </div><!-- /.side-menu__block-inner -->
-</div><!-- /.side-menu__block -->
-
-
-<div class="search-popup">
-    <div class="search-popup__overlay custom-cursor__overlay">
-        <div class="cursor"></div>
-        <div class="cursor-follower"></div>
-    </div><!-- /.search-popup__overlay -->
-    <div class="search-popup__inner">
-        <form action="#" class="search-popup__form">
-            <input type="text" name="search" placeholder="Type here to Search....">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div><!-- /.search-popup__inner -->
-</div><!-- /.search-popup -->
 
 
 <script src="assets/js/jquery.min.js"></script>
@@ -566,6 +217,71 @@
 
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
+<script src="assets/js/tokenManager.js"></script>
+<script src="assets/js/logoutHandler.js"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const postId = localStorage.getItem('currentPostId');
+        const editTitle = document.getElementById('title');
+        const editContent = document.getElementById('content');
+
+        if (!getAccessToken()) {
+            alert('로그인이 필요합니다.');
+            window.location.href = 'login.html'
+            return;
+        }
+        // 게시글 상세 정보를 가져와서 폼에 미리 채워주는 함수
+        function fetchPostDetails() {
+            fetchWithAuth(`http://localhost:8080/second-board/${postId}`)
+                .then(response => response.json())
+                .then(data => {
+                    // 기존 제목과 내용을 텍스트 필드에 미리 채워넣기
+                    editTitle.value = data.title;
+                    editContent.value = data.content;
+                })
+                .catch(error => {
+                    console.error('게시글을 불러오는 중 오류가 발생했습니다:', error);
+                });
+        }
+
+        // 폼 제출 시 수정 요청 처리
+        document.getElementById('edit-form2').addEventListener('submit', function (e) {
+            e.preventDefault(); // 기본 폼 제출 동작 방지
+            if (!editTitle.value.trim() || !editContent.value.trim()) {
+                alert('게시물을 작성하세요.');
+                return;
+            }
+            const updatedPost = {
+                title: editTitle.value,
+                content: editContent.value
+            };
+
+
+
+            fetchWithAuth(`http://localhost:8080/second-board/${postId}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedPost)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('게시글이 성공적으로 수정되었습니다.');
+                        window.location.href = 'free-board.html';
+                    } else {
+                        alert('권한이 없습니다.');
+                    }
+                })
+                .catch(error => {
+                    console.error('게시글 수정 중 오류가 발생했습니다:', error);
+                });
+        });
+
+        fetchPostDetails();
+    });
+</script>
 </body>
 
 </html>

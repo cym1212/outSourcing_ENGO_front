@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>한국 환경협회</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
@@ -12,10 +13,7 @@
     <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
     <!-- Fonts-->
-    <!--    <link-->
-<!--            href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"-->
-<!--            rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">-->
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
     <!-- Css-->
     <link rel="stylesheet" href="assets/css/animate.min.css">
@@ -59,9 +57,7 @@
                     <a href="mailto:gislmh@naver.com"><span class="icon-message"></span>gislmh@naver.com</a>
                     <a ><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
-                <!--                <div class="topbar-one__middle">-->
 
-                <!--                </div>-->
                 <div class="topbar-one__right">
                     <div class="topbar-one__social">
                         <a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -81,15 +77,11 @@
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
                         </a>
-                        <!--                            <a href="#" class="main-nav__search search-popup__toggler"><i-->
-                        <!--                                    class="icon-magnifying-glass"></i></a>-->
-                        <!--                            <a href="#" class="side-menu__toggler">-->
-                        <!--                                <i class="fa fa-bars"></i>-->
-                        <!--                            </a>-->
+
                     </div>
                     <div class="main-nav__main-navigation">
                         <ul class=" main-nav__navigation-box">
-                            <li class="dropdown current">
+                            <li class="dropdown">
                                 <a href="greeting.html">협회 소개</a>
                                 <ul>
                                     <li><a href="greeting.html">인사말</a></li>
@@ -97,15 +89,7 @@
                                     <li><a href="organization-chart.html">조직도</a></li>
                                     <li><a href="vision.html">협회비전</a></li>
                                     <li><a href="ci.html">협회 CI</a></li>
-                                    <!--                                        <li class="dropdown"><a href="#">Header Versions</a>-->
-                                    <!--                                            <ul>-->
-                                    <!--                                                <li><a href="index.html">Header 01</a></li>-->
-                                    <!--                                                <li><a href="index2.html">Header 02</a></li>-->
-                                    <!--                                                <li><a href="index3.html">Header 03</a></li>-->
-                                    <!--                                                <li><a href="index4.html">Header 04</a></li>-->
-                                    <!--                                                <li><a href="index5.html">Header 05</a></li>-->
-                                    <!--                                            </ul>&lt;!&ndash; /.sub-menu &ndash;&gt;-->
-                                    <!--                                        </li>-->
+
                                 </ul><!-- /.sub-menu -->
                             </li>
                             <li class="dropdown">
@@ -137,31 +121,20 @@
                                     <li><a href="donation.html">후원신청</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown current">
                                 <a href="login.html">로그인</a>
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
                                     <li><a href="login.html">로그인</a></li>
+                                    <li><a id="logout" href="">로그 아웃</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
 
-                            <!--                                    <ul>-->
-                            <!--                                        <li><a href="news.html">News</a></li>-->
-                            <!--                                        <li><a href="news_detail.html">News Details</a></li>-->
-                            <!--                                    </ul>&lt;!&ndash; /.sub-menu &ndash;&gt;-->
-                            </li>
-                            <!--                                <li>-->
-                            <!--                                    <a href="contact.html">Contact</a>-->
-                            <!--                                </li>-->
                         </ul>
                     </div><!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
-                        <!--                            <div class="icon_cart_box">-->
-                        <!--                                <a href="cart.html">-->
-                        <!--                                    <span class="icon-shopping-cart"></span>-->
-                        <!--                                </a>-->
-                        <!--                            </div>-->
+
                     </div>
                 </div>
             </nav>
@@ -182,23 +155,24 @@
                 <div class="signup-section">
                     <div class="signup-box">
                         <h2>Sign Up</h2>
-                        <form action="submit_signup.html" method="post">
+                        <form id="sign-up-form" method="post">
                             <div class="signup-form-group">
-                                <input type="email" placeholder="Email" required>
+                                <input type="email" id="email" placeholder="Email" required>
                             </div>
                             <div class="signup-form-group">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" id="name" placeholder="Name" required>
                             </div>
                             <div class="signup-form-group">
-                                <input type="text" placeholder="Phone Number" required>
+                                <input type="text" id="phone-number" placeholder="Phone Number" required>
                             </div>
                             <div class="signup-form-group">
-                                <input type="password" placeholder="Password" required>
+                                <input type="password" id="password" placeholder="Password" required>
                             </div>
                             <button type="submit" class="btn">회원 가입하기</button>
                             <p>이미 회원이신가요? <a id="login_1" href="login.html">로그인 하기</a></p>
                         </form>
                     </div>
+                    <div id="message"></div>
                 </div>
         </div>
     </section>
@@ -220,38 +194,6 @@
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
-
-<div class="side-menu__block">
-
-
-    <div class="side-menu__block-overlay custom-cursor__overlay">
-        <div class="cursor"></div>
-        <div class="cursor-follower"></div>
-    </div><!-- /.side-menu__block-overlay -->
-    <div class="side-menu__block-inner ">
-        <div class="side-menu__top justify-content-end">
-
-            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                    src="assets/images/shapes/close-1-1.png" alt=""></a>
-        </div><!-- /.side-menu__top -->
-
-
-        <nav class="mobile-nav__container">
-            <!-- content is loading via js -->
-        </nav>
-        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
-        <div class="side-menu__content">
-            <p><a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a> <br> <a href="tel:888-999-0000">888 999
-                0000</a></p>
-            <div class="side-menu__social">
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-            </div>
-        </div><!-- /.side-menu__content -->
-    </div><!-- /.side-menu__block-inner -->
-</div><!-- /.side-menu__block -->
 
 
 <div class="search-popup">
@@ -292,6 +234,57 @@
 
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
+<script src="assets/js/tokenManager.js"></script>
+<script src="assets/js/logoutHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const registerForm = document.getElementById('sign-up-form');
+
+        // 회원가입 폼 제출 이벤트 처리
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // 폼이 제출될 때 페이지 리로드를 방지
+
+            // 입력된 회원가입 정보 가져오기
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone-number').value;
+            const password = document.getElementById('password').value;
+
+            // 회원가입 데이터 구성
+            const requestData = {
+                email: email,
+                name: name,
+                phoneNum: phone,
+                password: password
+            };
+
+            // Fetch API로 회원가입 요청 보내기
+            fetch('http://localhost:8080/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 200) {
+                        alert('회원가입 성공! 로그인 해주세요.');
+                        window.location.href='login.html'
+                        registerForm.reset();
+                    } else {
+                        alert('회원가입 실패: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('회원가입 중 오류가 발생했습니다.');
+                });
+        });
+    });
+
+</script>
+
 </body>
 
 </html>

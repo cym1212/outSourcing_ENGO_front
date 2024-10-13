@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>한국 환경협회</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
@@ -11,11 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
     <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
-    <!-- Fonts-->
-<!--    <link-->
-<!--            href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"-->
-<!--            rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">-->
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
 
     <!-- Css-->
@@ -59,9 +56,6 @@
                     <a href="mailto:gislmh@naver.com"><span class="icon-message"></span>gislmh@naver.com</a>
                     <a ><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
-<!--                <div class="topbar-one__middle">-->
-
-<!--                </div>-->
                 <div class="topbar-one__right">
                     <div class="topbar-one__social">
                         <a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -81,11 +75,7 @@
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
                         </a>
-                        <!--                            <a href="#" class="main-nav__search search-popup__toggler"><i-->
-                        <!--                                    class="icon-magnifying-glass"></i></a>-->
-                        <!--                            <a href="#" class="side-menu__toggler">-->
-                        <!--                                <i class="fa fa-bars"></i>-->
-                        <!--                            </a>-->
+
                     </div>
                     <div class="main-nav__main-navigation">
                         <ul class=" main-nav__navigation-box">
@@ -97,15 +87,7 @@
                                     <li><a href="organization-chart.html">조직도</a></li>
                                     <li><a href="vision.html">협회비전</a></li>
                                     <li><a href="ci.html">협회 CI</a></li>
-                                    <!--                                        <li class="dropdown"><a href="#">Header Versions</a>-->
-                                    <!--                                            <ul>-->
-                                    <!--                                                <li><a href="index.html">Header 01</a></li>-->
-                                    <!--                                                <li><a href="index2.html">Header 02</a></li>-->
-                                    <!--                                                <li><a href="index3.html">Header 03</a></li>-->
-                                    <!--                                                <li><a href="index4.html">Header 04</a></li>-->
-                                    <!--                                                <li><a href="index5.html">Header 05</a></li>-->
-                                    <!--                                            </ul>&lt;!&ndash; /.sub-menu &ndash;&gt;-->
-                                    <!--                                        </li>-->
+
                                 </ul><!-- /.sub-menu -->
                             </li>
                             <li class="dropdown">
@@ -142,26 +124,17 @@
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
                                     <li><a href="login.html">로그인</a></li>
+                                    <li><a id="logout" href="">로그 아웃</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
 
-                                <!--                                    <ul>-->
-                                <!--                                        <li><a href="news.html">News</a></li>-->
-                                <!--                                        <li><a href="news_detail.html">News Details</a></li>-->
-                                <!--                                    </ul>&lt;!&ndash; /.sub-menu &ndash;&gt;-->
                             </li>
-                            <!--                                <li>-->
-                            <!--                                    <a href="contact.html">Contact</a>-->
-                            <!--                                </li>-->
+
                         </ul>
                     </div><!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
-                        <!--                            <div class="icon_cart_box">-->
-                        <!--                                <a href="cart.html">-->
-                        <!--                                    <span class="icon-shopping-cart"></span>-->
-                        <!--                                </a>-->
-                        <!--                            </div>-->
+
                     </div>
                 </div>
             </nav>
@@ -189,42 +162,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Slide Item -->
-            <!--                <div class="slide-item">-->
-            <!--                    <div class="image-layer" style="background-image: url(assets/images/main-slider/slide_v1_2.jpg);">-->
-            <!--                    </div>-->
-            <!--                    <div class="auto-container">-->
-            <!--                        <div class="content-box">-->
-            <!--                            <div class="content">-->
-            <!--                                <div class="inner">-->
-            <!--                                    <div class="sub-title">The best Agriculture products</div>-->
-            <!--                                    <h1>Welcome to<br> agriculture Form</h1>-->
-            <!--                                    <div class="link-box">-->
-            <!--                                        <a href="about.html" class="thm-btn">Discover More</a>-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                            </div>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--                &lt;!&ndash; Slide Item &ndash;&gt;-->
-            <!--                <div class="slide-item">-->
-            <!--                    <div class="image-layer" style="background-image: url(assets/images/main-slider/slide_v1_3.jpg);">-->
-            <!--                    </div>-->
-            <!--                    <div class="auto-container">-->
-            <!--                        <div class="content-box">-->
-            <!--                            <div class="content">-->
-            <!--                                <div class="inner">-->
-            <!--                                    <div class="sub-title">The best Agriculture products</div>-->
-            <!--                                    <h1>Welcome to<br> agriculture Form</h1>-->
-            <!--                                    <div class="link-box">-->
-            <!--                                        <a href="about.html" class="thm-btn">Discover More</a>-->
-            <!--                                    </div>-->
-            <!--                                </div>-->
-            <!--                            </div>-->
-            <!--                        </div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
 
 
         </div>
@@ -307,16 +244,8 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
                     <div class="about1_img">
-                        <!--                            <div class="about1_shape_1"></div>-->
                         <img id="main_page_image1" src="assets/images/resources/image8.png" alt="About-Img">
-                        <!--                            <div class="about1_icon-box">-->
-                        <!--                                <div class="circle">-->
-                        <!--                                    <span class="icon-focus"></span>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="about_img_2">-->
-                        <!--                                <img src="assets/images/about/about-1-img-2.jpg" alt="">-->
-                        <!--                            </div>-->
+
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
@@ -346,10 +275,6 @@
                                 <p>책임과 의무를 가르치는 환경 조기교육</p>
                             </div>
                         </div>
-                        <!--                            <div class="bottom_text">-->
-                        <!--                                <p> If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't-->
-                        <!--                                    anything embarrassing hidden in the middle of text.</p>-->
-                        <!--                            </div>-->
                         <div class="about1__button-block">
                             <a href="greeting.html" class="thm-btn about_one__btn">자세히 보기</a>
                         </div>
@@ -360,24 +285,6 @@
     </section>
 
 
-    <!--        <section class="featured-one">-->
-    <!--            <div class="container">-->
-    <!--                <div class="row">-->
-    <!--                    <div class="col-xl-6 wow slideInLeft" data-wow-delay="100ms">-->
-    <!--                        <div class="single_featured_box">-->
-    <!--                            <img src="assets/images/resources/featured-leaf.png" alt=""><span>We Sale Best Agriculture-->
-    <!--                                Products</span><img src="assets/images/resources/featured-leaf.png" alt="">-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-xl-6 wow slideInRight" data-wow-delay="100ms">-->
-    <!--                        <div class="single_featured_box">-->
-    <!--                            <img src="assets/images/resources/featured-leaf.png" alt=""><span>We’ve 40 years experience-->
-    <!--                                in field</span><img src="assets/images/resources/featured-leaf.png" alt="">-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </section>-->
 
     <section class="video-one" style="background-image:url(assets/images/resources/image10.jpg);">
         <div class="container text-center">
@@ -397,208 +304,6 @@
 
     </section>
 
-    <!--        <section class="testimonials-one">-->
-    <!--            <div class="container">-->
-    <!--                <div class="row">-->
-    <!--                    <div class="col-xl-6 col-lg-6">-->
-    <!--                        <div class="testimonials_one_left">-->
-    <!--                            <div class="block-title text-left">-->
-    <!--                                <p>testimonails</p>-->
-    <!--                                <h3>What our customers are<br>talking about</h3>-->
-    <!--                                <div class="leaf">-->
-    <!--                                    <img src="assets/images/resources/leaf.png" alt="">-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                            <div class="testimonials_one_text">-->
-    <!--                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have-->
-    <!--                                    suffered alteration in some form, by injected humour, or randomised words which-->
-    <!--                                    don't look even slightly believable.</p>-->
-    <!--                            </div>-->
-    <!--                            <div class="project_counted wow fadeInUp" data-wow-delay="300ms">-->
-    <!--                                <div class="icon_box">-->
-    <!--                                    <span class="icon-farmer"></span>-->
-    <!--                                </div>-->
-    <!--                                <div class="project-content">-->
-    <!--                                    <h3 class="counter">4,850000</h3>-->
-    <!--                                    <p>Agriculture projects are completed</p>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-xl-6 col-lg-6">-->
-    <!--                        <div class="testimonials_one_content">-->
-    <!--                            <div class="testimonials_one_carousel owl-theme owl-carousel">-->
-    <!--                                <div class="testimonials_one_single_item">-->
-    <!--                                    <div class="text">-->
-    <!--                                        <p>This is due to their excellent service, and augue homero consectetuer in nam.-->
-    <!--                                            Eu quo laoreet propriae, malis exerci habemus has vocent persius eum ea.</p>-->
-    <!--                                    </div>-->
-    <!--                                    <div class="client_thumbnail">-->
-    <!--                                        <div class="client_img">-->
-    <!--                                            <img src="assets/images/testimonials/testimonial-1-img-1.png"-->
-    <!--                                                alt="testimonial1-img">-->
-    <!--                                        </div>-->
-    <!--                                        <div class="client_title">-->
-    <!--                                            <h4>Kevin Hardson</h4>-->
-    <!--                                            <p>Customer</p>-->
-    <!--                                        </div>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                                <div class="testimonials_one_single_item">-->
-    <!--                                    <div class="text">-->
-    <!--                                        <p>This is due to their excellent service, and augue homero consectetuer in nam.-->
-    <!--                                            Eu quo laoreet propriae, malis exerci habemus has vocent persius eum ea.</p>-->
-    <!--                                    </div>-->
-    <!--                                    <div class="client_thumbnail">-->
-    <!--                                        <div class="client_img">-->
-    <!--                                            <img src="assets/images/testimonials/testimonial-1-img-1.png"-->
-    <!--                                                alt="testimonial1-img">-->
-    <!--                                        </div>-->
-    <!--                                        <div class="client_title">-->
-    <!--                                            <h4>Kevin Hardson</h4>-->
-    <!--                                            <p>Customer</p>-->
-    <!--                                        </div>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                                <div class="testimonials_one_single_item">-->
-    <!--                                    <div class="text">-->
-    <!--                                        <p>This is due to their excellent service, and augue homero consectetuer in nam.-->
-    <!--                                            Eu quo laoreet propriae, malis exerci habemus has vocent persius eum ea.</p>-->
-    <!--                                    </div>-->
-    <!--                                    <div class="client_thumbnail">-->
-    <!--                                        <div class="client_img">-->
-    <!--                                            <img src="assets/images/testimonials/testimonial-1-img-1.png"-->
-    <!--                                                alt="testimonial1-img">-->
-    <!--                                        </div>-->
-    <!--                                        <div class="client_title">-->
-    <!--                                            <h4>Kevin Hardson</h4>-->
-    <!--                                            <p>Customer</p>-->
-    <!--                                        </div>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </section>-->
-
-    <!--        <section class="recent-project">-->
-    <!--            <div class="container">-->
-    <!--                <div class="block-title text-center">-->
-    <!--                    <p>explore projects</p>-->
-    <!--                    <h3>our Recent projects</h3>-->
-    <!--                    <div class="leaf">-->
-    <!--                        <img src="assets/images/resources/leaf.png" alt="">-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--                <div class="row">-->
-    <!--                    <div class="col-xl-4 col-lg-4">-->
-    <!--                        <div class="recent_project_single wow fadeInUp" data-wow-delay="300ms">-->
-    <!--                            <div class="project_img_box">-->
-    <!--                                <img src="assets/images/project/recent-pro-img-1.jpg" alt="Recent Project Img">-->
-    <!--                                <div class="project_content">-->
-    <!--                                    <h3>organic<br>solutions</h3>-->
-    <!--                                </div>-->
-    <!--                                <div class="hover_box">-->
-    <!--                                    <a href="projects_detail.html"><span class="icon-left-arrow"></span></a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-xl-4 col-lg-4">-->
-    <!--                        <div class="recent_project_single wow fadeInUp" data-wow-delay="600ms">-->
-    <!--                            <div class="project_img_box">-->
-    <!--                                <img src="assets/images/project/recent-pro-img-2.jpg" alt="Recent Project Img">-->
-    <!--                                <div class="project_content">-->
-    <!--                                    <h3>Harvest<br>Innovations</h3>-->
-    <!--                                </div>-->
-    <!--                                <div class="hover_box">-->
-    <!--                                    <a href="projects_detail.html"><span class="icon-left-arrow"></span></a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="900ms">-->
-    <!--                        <div class="recent_project_single">-->
-    <!--                            <div class="project_img_box">-->
-    <!--                                <img src="assets/images/project/recent-pro-img-3.jpg" alt="Recent Project Img">-->
-    <!--                                <div class="project_content">-->
-    <!--                                    <h3>Agriculture<br>farming</h3>-->
-    <!--                                </div>-->
-    <!--                                <div class="hover_box">-->
-    <!--                                    <a href="projects_detail.html"><span class="icon-left-arrow"></span></a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </section>-->
-
-    <!--        <section class="benefits">-->
-    <!--            <div class="benefits_bg" style="background-image: url(assets/images/resources/benifits_bg.png)"></div>-->
-    <!--            <div class="container">-->
-    <!--                <div class="row">-->
-    <!--                    <div class="col-xl-4">-->
-    <!--                        <div class="block-title text-left">-->
-    <!--                            <p>Our benefits</p>-->
-    <!--                            <h3>Agriculture & Eco<br>Farming</h3>-->
-    <!--                            <div class="leaf">-->
-    <!--                                <img src="assets/images/resources/leaf.png" alt="">-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-xl-8 d-flex">-->
-    <!--                        <div class="my-auto">-->
-    <!--                            <div class="benefits_text">-->
-    <!--                                <p>There are many variations of passages of available but the majority have suffered-->
-    <!--                                    alteration in some form, by injected humou or randomised words which don't look even-->
-    <!--                                    slightly believable. There are many variations of passages of available but the-->
-    <!--                                    majority have suffered alteration in some form, by injected humou or randomised-->
-    <!--                                    words which don't look even slightly believable.</p>-->
-    <!--                            </div>-->
-    <!--                        </div>&lt;!&ndash; /.my-auto &ndash;&gt;-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--                <div class="benefits_bottom_part">-->
-    <!--                    <div class="row">-->
-    <!--                        <div class="col-xl-3 col-lg-3 col-md-6">-->
-    <!--                            <div class="benefits_single wow fadeInUp" data-wow-delay="300ms">-->
-    <!--                                <div class="icon-box">-->
-    <!--                                    <span class="icon-tractor"></span>-->
-    <!--                                </div>-->
-    <!--                                <h3>We Use New technology</h3>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="col-xl-3 col-lg-3 col-md-6">-->
-    <!--                            <div class="benefits_single wow fadeInUp" data-wow-delay="600ms">-->
-    <!--                                <div class="icon-box">-->
-    <!--                                    <span class="icon-cart"></span>-->
-    <!--                                </div>-->
-    <!--                                <h3>professional farmers</h3>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="col-xl-3 col-lg-3 col-md-6">-->
-    <!--                            <div class="benefits_single wow fadeInUp" data-wow-delay="900ms">-->
-    <!--                                <div class="icon-box">-->
-    <!--                                    <span class="icon-watering-can"></span>-->
-    <!--                                </div>-->
-    <!--                                <h3>We’re certified company</h3>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="col-xl-3 col-lg-3 col-md-6">-->
-    <!--                            <div class="benefits_single wow fadeInUp" data-wow-delay="1200ms">-->
-    <!--                                <div class="icon-box">-->
-    <!--                                    <span class="icon-log"></span>-->
-    <!--                                </div>-->
-    <!--                                <h3>We deliver everywhere</h3>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </section>-->
 
     <section class="product-one">
         <div class="container">
@@ -606,10 +311,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="product_img">
                         <img id="main_page_image2" src="assets/images/resources/image2.jpg" alt="Product One Img">
-                        <!--                            <div class="experience_box">-->
-                        <!--                                <h2>40 Year</h2>-->
-                        <!--                                <p>Of Experience</p>-->
-                        <!--                            </div>-->
+
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
@@ -633,43 +335,12 @@
                             <h5><b>순수 환경단체의 중심이 되겠습니다.</b></h5>
                             <p>보다 나은 인류의 삶에 질을 향상시키기 위한 환경문제 전문 단체</p>
                         </div>
-                        <!--                            <div class="progress-levels">-->
-                        <!--Skill Box-->
-                        <!--                                <div class="progress-box">-->
-                        <!--                                    <div class="inner count-box">-->
-                        <!--                                        <div class="text">Agriculture</div>-->
-                        <!--                                        <div class="bar">-->
-                        <!--                                            <div class="bar-innner">-->
-                        <!--                                                <div class="skill-percent">-->
-                        <!--                                                    <span class="count-text" data-speed="3000" data-stop="68">0</span>-->
-                        <!--                                                    <span class="percent">%</span>-->
-                        <!--                                                </div>-->
-                        <!--                                                <div class="bar-fill" data-percent="68"></div>-->
-                        <!--                                            </div>-->
-                        <!--                                        </div>-->
-                        <!--                                    </div>-->
-                        <!--                                </div>-->
-                        <!--                                &lt;!&ndash;Skill Box&ndash;&gt;-->
-                        <!--                                <div class="progress-box">-->
-                        <!--                                    <div class="inner count-box">-->
-                        <!--                                        <div class="text">Organic</div>-->
-                        <!--                                        <div class="bar">-->
-                        <!--                                            <div class="bar-innner">-->
-                        <!--                                                <div class="skill-percent">-->
-                        <!--                                                    <span class="count-text" data-speed="3000" data-stop="98">0</span>-->
-                        <!--                                                    <span class="percent">%</span>-->
-                        <!--                                                </div>-->
-                        <!--                                                <div class="bar-fill" data-percent="98"></div>-->
-                        <!--                                            </div>-->
-                        <!--                                        </div>-->
-                        <!--                                    </div>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-<!--                    </div>-->
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <section class="blog-one">
         <div class="container">
@@ -680,26 +351,18 @@
                     <img src="assets/images/resources/leaf.png" alt="">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xl-4 col-lg-4">
+            <div class="row" id="notice-container">
+                <div class="col-xl-4 col-lg-4" id="notice-item-1">
                     <div class="blog_one_single wow fadeInUp" data-wow-delay="300ms">
                         <div class="blog_one_image">
-                            <!--                                <div class="blog_image">-->
-                            <!--                                    <img src="assets/images/blog/blog-1-img-1.jpg" alt="Blog One Image">-->
-                            <!--                                    <div class="blog_one_date_box">-->
-                            <!--                                        <p>30 Oct, 2019</p>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <div class="blog-one__content">
-                                <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="not-use/news_detail.html"><i class="far fa-user-circle"></i> 작성자 정보
-                                        받아오기</a></li>
-                                    <li><a href="not-use/news_detail.html"><i class="far fa-comments"></i> 댓글 수 받아오기</a>
-                                    </li>
+                            <div class="blog-one__content" id="notice-content-1">
+                                <ul class="list-unstyled blog-one__meta" id="meta-1">
+                                    <li><a href="#" id="author-1"><i class="far fa-user-circle"></i> 작성자 정보</a></li>
+                                    <li><a href="#" id="views-1"><i class="far fa-eye"></i> 조회수</a></li>
                                 </ul>
-                                <h3><a href="notice.html">인류의 공동목표인 <br>환경보전 및 환경개선을 <br>추구하는 모든 인류 및 <br>단체와 연대하겠습니다.</a></h3>
-                                <div class="blog_one_text">
-                                    <p>인류의 공동목표인 환경보전 및 <br>환경개선을  추구하는 모든 인류 및<br> 단체와 연대하겠습니다.</p>
+                                <h3><a href="notice.html" id="title-1">공지사항 제목 1</a></h3>
+                                <div class="blog_one_text" id="text-1">
+                                    <p>공지사항 내용 1...</p>
                                 </div>
                                 <div class="read_more_btn">
                                     <a href="notice.html"><i class="fa fa-angle-right"></i>Read More</a>
@@ -708,25 +371,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4">
+                <div class="col-xl-4 col-lg-4" id="notice-item-2">
                     <div class="blog_one_single wow fadeInUp" data-wow-delay="600ms">
                         <div class="blog_one_image">
-                            <!--                                <div class="blog_image">-->
-                            <!--                                    <img src="assets/images/blog/blog-1-img-2.jpg" alt="Blog One Image">-->
-                            <!--                                    <div class="blog_one_date_box">-->
-                            <!--                                        <p>30 Oct, 2019</p>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <div class="blog-one__content">
-                                <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="not-use/news_detail.html"><i class="far fa-user-circle"></i> 작성자 정보
-                                        받아오기</a></li>
-                                    <li><a href="not-use/news_detail.html"><i class="far fa-comments"></i> 댓글 수 받아오기</a>
-                                    </li>
+                            <div class="blog-one__content" id="notice-content-2">
+                                <ul class="list-unstyled blog-one__meta" id="meta-2">
+                                    <li><a href="#" id="author-2"><i class="far fa-user-circle"></i> 작성자 정보</a></li>
+                                    <li><a href="#" id="views-2"><i class="far fa-eye"></i> 조회수</a></li>
                                 </ul>
-                                <h3><a href="notice.html">쓰레기 및 오페물은<br>줄어가고,  자원은 다시<br> 재활용하는 세상</a></h3>
-                                <div class="blog_one_text">
-                                    <p>쓰레기 및 오페물은 줄어가고, 자원은 다시 재활용하는 세상</p>
+                                <h3><a href="notice.html" id="title-2">공지사항 제목 2</a></h3>
+                                <div class="blog_one_text" id="text-2">
+                                    <p>공지사항 내용 2...</p>
                                 </div>
                                 <div class="read_more_btn">
                                     <a href="notice.html"><i class="fa fa-angle-right"></i>Read More</a>
@@ -735,25 +390,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4">
+                <div class="col-xl-4 col-lg-4" id="notice-item-3">
                     <div class="blog_one_single wow fadeInUp" data-wow-delay="900ms">
                         <div class="blog_one_image">
-                            <!--                                <div class="blog_image">-->
-                            <!--                                    <img src="assets/images/blog/blog-1-img-3.jpg" alt="Blog One Image">-->
-                            <!--                                    <div class="blog_one_date_box">-->
-                            <!--                                        <p>30 Oct, 2019</p>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <div class="blog-one__content">
-                                <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="not-use/news_detail.html"><i class="far fa-user-circle"></i> 작성자 정보
-                                        받아오기</a></li>
-                                    <li><a href="not-use/news_detail.html"><i class="far fa-comments"></i> 댓글 수 받아오기</a>
-                                    </li>
+                            <div class="blog-one__content" id="notice-content-3">
+                                <ul class="list-unstyled blog-one__meta" id="meta-3">
+                                    <li><a href="#" id="author-3"><i class="far fa-user-circle"></i> 작성자 정보</a></li>
+                                    <li><a href="#" id="views-3"><i class="far fa-eye"></i> 조회수</a></li>
                                 </ul>
-                                <h3><a href="notice.html">인류 환경가치의 중심 'GREEN BAND', 'GREEN HUMAN'</a></h3>
-                                <div class="blog_one_text">
-                                    <p>인류 환경가치의 중심 'GREEN BAND', 'GREEN HUMAN'</p>
+                                <h3><a href="notice.html" id="title-3">공지사항 제목 3</a></h3>
+                                <div class="blog_one_text" id="text-3">
+                                    <p>공지사항 내용 3...</p>
                                 </div>
                                 <div class="read_more_btn">
                                     <a href="notice.html"><i class="fa fa-angle-right"></i>Read More</a>
@@ -766,21 +413,6 @@
         </div>
     </section>
 
-    <!--        <section class="cta-one" style="background-image: url(assets/images/resources/cta_one_bg-1.jpg)">-->
-    <!--            <div class="container">-->
-    <!--                <div class="row">-->
-    <!--                    <div class="col-xl-12">-->
-    <!--                        <div class="cta_one_content">-->
-    <!--                            <h1>Provide you the Highest Quality products<br>that Meets your Expectation</h1>-->
-    <!--                            <p>Eu quo laoreet propriae, te has, vocent persius eum ea.</p>-->
-    <!--                            <div class="cta_one__button-block">-->
-    <!--                                <a href="" class="thm-btn cta_one__btn">Discover More</a>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </section>-->
 
     <div class="brand-one">
         <div class="container">
@@ -829,95 +461,7 @@
         </div>
     </div>
 
-<!--    <footer class="site-footer">-->
-<!--        <div class="site-footer_farm_image"><img src="assets/images/resources/site-footer-farm.png"-->
-<!--                                                 alt="Farm Image"></div>-->
-<!--        <div class="container">-->
-<!--            <div class="row no-gutters">-->
-<!--                <div class="col-xl-4 col-lg-4 col-md-6">-->
-<!--                    <div class="footer-widget__column footer-widget__about wow fadeInUp" data-wow-delay="100ms">-->
-<!--                        <div class="footer-widget__title">-->
-<!--                            <h3>About</h3>-->
-<!--                        </div>-->
-<!--                        <div class="footer-widget_about_text">-->
-<!--                            <p>Lorem ipsum dolor sit amet, adipiscing elit. Nulla placerat posuere dui. Pellentesque-->
-<!--                                venenatis sem non lacus ac auctor.</p>-->
-<!--                        </div>-->
-<!--                        <form>-->
-<!--                            <div class="footer_input-box">-->
-<!--                                <input type="Email" placeholder="Email Address">-->
-<!--                                <button type="submit" class="button"><i class="fa fa-check"></i></button>-->
-<!--                            </div>-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xl-2 col-lg-2 col-md-6">-->
-<!--                    <div class="footer-widget__column footer-widget__link wow fadeInUp" data-wow-delay="200ms">-->
-<!--                        <div class="footer-widget__title">-->
-<!--                            <h3>Explore</h3>-->
-<!--                        </div>-->
-<!--                        <ul class="footer-widget__links-list list-unstyled">-->
-<!--                            <li><a href="not-use/about.html">About Us</a></li>-->
-<!--                            <li><a href="not-use/service.html">Services</a></li>-->
-<!--                            <li><a href="not-use/projects.html">Our Projects</a></li>-->
-<!--                            <li><a href="not-use/farmers.html">Meet the Farmers</a></li>-->
-<!--                            <li><a href="not-use/news.html">Latest News</a></li>-->
-<!--                            <li><a href="not-use/contact.html">Contact</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xl-3 col-lg-3 col-md-6">-->
-<!--                    <div class="footer-widget__column footer-widget__news wow fadeInUp" data-wow-delay="300ms">-->
-<!--                        <div class="footer-widget__title">-->
-<!--                            <h3>News</h3>-->
-<!--                        </div>-->
-<!--                        <ul class="footer-widget__news list-unstyled">-->
-<!--                            <li>-->
-<!--                                <div class="footer-widget__news_image">-->
-<!--                                    <img src="assets/images/resources/footer-1-img-1.jpg" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="footer-widget__news_text">-->
-<!--                                    <p><a href="not-use/news_detail.html"> Learn 10 Best Tips for New Formers</a></p>-->
-<!--                                </div>-->
-<!--                                <div class="footer-widget__news_date_box">-->
-<!--                                    <p>30 Oct, 2019</p>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <div class="footer-widget__news_image">-->
-<!--                                    <img src="assets/images/resources/footer-1-img-2.jpg" alt="">-->
-<!--                                </div>-->
-<!--                                <div class="footer-widget__news_text">-->
-<!--                                    <p><a href="not-use/news_detail.html">Farmer Sentiment Darkens Hopes Fade</a></p>-->
-<!--                                </div>-->
-<!--                                <div class="footer-widget__news_date_box">-->
-<!--                                    <p>30 Oct, 2019</p>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-xl-3 col-lg-3 col-md-6">-->
-<!--                    <div class="footer-widget__column footer-widget__contact wow fadeInUp" data-wow-delay="400ms">-->
-<!--                        <div class="footer-widget__title">-->
-<!--                            <h3>Contact</h3>-->
-<!--                        </div>-->
-<!--                        <div class="footer-widget_contact">-->
-<!--                            <p>66 Broklyn Street, New Town<br>DC 5752, New Yrok</p>-->
-<!--                            <a href="mailto:needhelp@agrikol.com">needhelp@agrikol.com</a><br>-->
-<!--                            <a href="tel:666-888-0000">666 888 0000</a>-->
-<!--                            <div class="site-footer__social">-->
-<!--                                <a href="#"><i class="fab fa-facebook-square"></i></a>-->
-<!--                                <a href="#"><i class="fab fa-twitter"></i></a>-->
-<!--                                <a href="#"><i class="fab fa-instagram"></i></a>-->
-<!--                                <a href="#"><i class="fab fa-dribbble"></i></a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </footer>-->
+
 
     <div class="site-footer_bottom">
         <div class="container">
@@ -937,49 +481,6 @@
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
-<div class="side-menu__block">
-    <div class="side-menu__block-overlay custom-cursor__overlay">
-        <div class="cursor"></div>
-        <div class="cursor-follower"></div>
-    </div><!-- /.side-menu__block-overlay -->
-    <div class="side-menu__block-inner ">
-        <div class="side-menu__top justify-content-end">
-            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
-                    src="assets/images/shapes/close-1-1.png" alt=""></a>
-        </div><!-- /.side-menu__top -->
-
-        <nav class="mobile-nav__container">
-            <!-- content is loading via js -->
-        </nav>
-
-        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
-
-        <div class="side-menu__content">
-            <p><a href="mailto:needhelp@tripo.com">needhelp@agricol.com</a> <br> <a href="tel:888-999-0000">888 999
-                0000</a></p>
-            <div class="side-menu__social">
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="search-popup">
-    <div class="search-popup__overlay custom-cursor__overlay">
-        <div class="cursor"></div>
-        <div class="cursor-follower"></div>
-    </div><!-- /.search-popup__overlay -->
-    <div class="search-popup__inner">
-        <form action="#" class="search-popup__form">
-            <input type="text" name="search" placeholder="Type here to Search....">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-</div>
 
 
 <script src="assets/js/jquery.min.js"></script>
@@ -1006,6 +507,80 @@
 
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
+
+<script src="assets/js/tokenManager.js"></script>
+<script src="assets/js/logoutHandler.js"></script>
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const baseUrl = 'http://localhost:8080/first-board';
+
+        // 첫 번째 요청: 3개의 게시글 목록을 가져오는 페이징 처리
+        const url = new URL(baseUrl);
+        url.searchParams.append('page', 0);
+        url.searchParams.append('size', 3);
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const postIds = data.content.map(item => item.id);
+
+                // 각 게시글의 ID로 상세 조회 요청을 보냄
+                return Promise.all(postIds.map(id => {
+                    const detailUrl = `${baseUrl}/${id}`;
+                    return fetch(detailUrl).then(res => res.json());
+                }));
+            })
+            .then(details => {
+                // 상세 데이터를 화면에 표시
+                displayLatestNotices(details);
+            })
+            .catch(error => {
+                console.error('게시글을 불러오는 중 오류가 발생했습니다:', error);
+            });
+    });
+
+    function displayLatestNotices(notices) {
+        const noticeContainer = document.getElementById('notice-container');
+
+        // 기존 공지사항 목록을 초기화
+        noticeContainer.innerHTML = '';
+
+        // HTML 템플릿을 만들어서 공지사항을 추가
+        notices.forEach((notice, index) => {
+            const delay = (index + 1) * 300; // 각 요소의 애니메이션 지연 시간 설정
+
+            const noticeHTML = `
+        <div class="col-xl-4 col-lg-4" id="notice-item-${index + 1}">
+            <div class="blog_one_single wow fadeInUp" data-wow-delay="${delay}ms">
+                <div class="blog_one_image">
+                    <div class="blog-one__content" id="notice-content-${index + 1}">
+                        <ul class="list-unstyled blog-one__meta" id="meta-${index + 1}">
+                            <li><a href="#"><i class="far fa-user-circle"></i> ${notice.name}</a></li>
+                            <li><a href="#"><i class="far fa-eye"></i> 조회수: ${notice.viewCount}</a></li>
+                        </ul>
+                        <h3><a href="notice.html" id="title-${index + 1}">${notice.title}</a></h3>
+                        <div class="blog_one_text" id="text-${index + 1}">
+                            <p>${notice.content.slice(0, 100)}...</p> <!-- 첫 100자만 표시 -->
+                        </div>
+                        <div class="read_more_btn">
+                            <a href="notice.html"><i class="fa fa-angle-right"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+            noticeContainer.innerHTML += noticeHTML;
+        });
+    }
+</script>
 
 
 </body>
