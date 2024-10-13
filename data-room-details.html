@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>한국 환경협회</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
@@ -282,7 +281,7 @@
 
         // 게시글 상세 조회 함수
         function fetchBoardDetails() {
-            fetch(`http://localhost:8080/third-board/${postId}`)
+            fetch(`http://49.247.174.32:8080/third-board/${postId}`)
                 .then(response => response.json())
                 .then(data => {
                     displayBoardDetails(data);
@@ -319,7 +318,7 @@
             e.preventDefault();
 
             if (isLiked) {
-                fetchWithAuth(`http://localhost:8080/third-board/${postId}/unlike`, {
+                fetchWithAuth(`http://49.247.174.32:8080/third-board/${postId}/unlike`, {
                     method: 'POST'
                 })
                     .then(response => {
@@ -336,7 +335,7 @@
                     });
             } else {
 
-                fetchWithAuth(`http://localhost:8080/third-board/${postId}/like`, {
+                fetchWithAuth(`http://49.247.174.32:8080/third-board/${postId}/like`, {
                     method: 'POST'
                 })
                     .then(response => {
@@ -359,7 +358,7 @@
 
             if (confirm('정말로 이 게시글을 삭제하시겠습니까?')) {
 
-                fetchWithAuth(`http://localhost:8080/third-board/${postId}`, {
+                fetchWithAuth(`http://49.247.174.32:8080/third-board/${postId}`, {
                     method: 'DELETE'
                 })
                     .then(response => {
@@ -379,7 +378,7 @@
 
         // 댓글 조회 함수
         function fetchComments() {
-            fetch(`http://localhost:8080/third-board/${postId}/third-board-comments`)
+            fetch(`http://49.247.174.32:8080/third-board/${postId}/third-board-comments`)
                 .then(response => response.json())
                 .then(data => {
                     displayComments(data.content);
@@ -478,7 +477,7 @@
                 comments: commentText,
             };
 
-            fetchWithAuth(`http://localhost:8080/third-board/${postId}/third-board-comments/create`, {
+            fetchWithAuth(`http://49.247.174.32:8080/third-board/${postId}/third-board-comments/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -527,7 +526,7 @@
                 }
 
                 // Fetch API를 통해 서버로 수정된 내용 전송
-                fetchWithAuth(`http://localhost:8080/third-board/${postId}/third-board-comments/update/${commentId}`, {
+                fetchWithAuth(`http://49.247.174.32:8080/third-board/${postId}/third-board-comments/update/${commentId}`, {
                     method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'
@@ -564,7 +563,7 @@
         function deleteComment(commentId) {
             if (!confirm('댓글을 삭제하시겠습니까?')) return;
 
-            fetchWithAuth(`http://localhost:8080/third-board/${postId}/third-board-comments/delete/${commentId}`, {
+            fetchWithAuth(`http://49.247.174.32:8080/third-board/${postId}/third-board-comments/delete/${commentId}`, {
                 method: 'DELETE'
             })
                 .then(() => {

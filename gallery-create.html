@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>한국 환경협회</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
@@ -264,7 +263,7 @@
                 formData.append('images', files[i]);
             }
 
-            fetchWithAuth('http://localhost:8080/gallery-board/create', {
+            fetchWithAuth('http://49.247.174.32:8080/gallery-board/create', {
                 method: 'POST',
                 body: formData
             })

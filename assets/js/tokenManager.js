@@ -52,7 +52,7 @@ function refreshAccessToken() {
     requestToken = {
         refreshToken: refreshToken
     };
-    return fetch('http://localhost:8080/auth/tokens', {
+    return fetch('http://49.247.174.32:8080/auth/tokens', {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'

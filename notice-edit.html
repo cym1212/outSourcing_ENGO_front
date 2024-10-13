@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>한국 환경협회</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
@@ -234,7 +233,7 @@
         }
         // 게시글 상세 정보를 가져와서 폼에 미리 채워주는 함수
         function fetchPostDetails() {
-            fetchWithAuth(`http://localhost:8080/first-board/${postId}`)
+            fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}`)
                 .then(response => response.json())
                 .then(data => {
                     // 기존 제목과 내용을 텍스트 필드에 미리 채워넣기
@@ -261,7 +260,7 @@
             };
 
 
-            fetchWithAuth(`http://localhost:8080/first-board/${postId}`, {
+            fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

@@ -12,7 +12,7 @@ if (typeof getAccessToken === 'function') {
             return;
         }
 
-        fetch('http://localhost:8080/auth/logout', {
+        fetch('http://49.247.174.32:8080/auth/logout', {
             method: 'PATCH',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
