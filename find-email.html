@@ -57,14 +57,14 @@
                     <a ><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
 
-                <div class="topbar-one__right">
-                    <div class="topbar-one__social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+<!--                <div class="topbar-one__right">-->
+<!--                    <div class="topbar-one__social">-->
+<!--                        <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-youtube"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -72,6 +72,11 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
+                     <div class="main-nav__left1">
+                        <a href="#" class="side-menu__toggler">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -120,13 +125,11 @@
                                     <li><a href="donation.html">후원신청</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown current">
+                            <li class="dropdown current" id="loginMenu">
                                 <a href="login.html">로그인</a>
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
-                                    <li><a href="login.html">로그인</a></li>
-                                    <li><a id="logout" href="">로그 아웃</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
                             </li>
 
                         </ul>
@@ -154,13 +157,13 @@
             <h2 id="introduction">이메일 찾기</h2>
             <div class="find-email-section">
                 <div class="email-box">
-                    <h2>Find Email</h2>
+                    <h2>이메일 찾기</h2>
                     <form id="find-email-form">
                         <div class="find-email-form-group">
-                            <input type="text" id="name" name="name" placeholder="Name" required>
+                            <input type="text" id="name" name="name" placeholder="이름" required>
                         </div>
                         <div class="find-email-form-group">
-                            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
+                            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="전화번호" required>
                         </div>
                         <button type="submit" class="btn">이메일 찾기</button>
                         <div class="find-email-option">
@@ -190,6 +193,35 @@
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
+<div class="side-menu__block">
+    <div class="side-menu__block-overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div><!-- /.side-menu__block-overlay -->
+    <div class="side-menu__block-inner ">
+        <div class="side-menu__top justify-content-end">
+            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                    src="assets/images/shapes/close-1-1.png" alt=""></a>
+        </div><!-- /.side-menu__top -->
+
+        <nav class="mobile-nav__container">
+            <!-- content is loading via js -->
+        </nav>
+
+        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+
+        <div class="side-menu__content">
+            <p><a href="mailto:gislmh@naver.com">gislmh@naver.com</a> <br> <a href="tel:010-5850-8885">010-5850-8885</a></p>
+            <!--            <div class="side-menu__social">-->
+            <!--                <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-twitter"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-instagram"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-pinterest-p"></i></a>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
@@ -211,6 +243,7 @@
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/jquery.bxslider.min.js"></script>
 <script src="assets/js/appear.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
@@ -231,7 +264,20 @@
 
             // 입력값 유효성 검사
             if (!name || !phoneNumber) {
-                alert('모든 필드를 입력하세요.');
+                swal({
+                    title: "경고!",
+                    text: "모든 필드를 입력하세요!." ,
+                    icon: "warning",
+                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                });
                 return;
             }
 
@@ -242,7 +288,8 @@
             };
 
             // 이메일 찾기 API 요청
-            fetch('http://49.247.174.32:8080/auth/find/email', {
+            // fetch('http://49.247.174.32:8080/auth/find/email', {
+            fetch('http://localhost:8080/auth/find/email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -253,15 +300,52 @@
                 .then(data => {
 
                     if (data.email) {
-                        alert(data.email);
+                        swal({
+                            title: "성공!",
+                            text: "이메일 주소입니다! :" + data.email ,
+                            icon: "success",
+                            buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                        });
                     } else {
-                        alert('이메일을 찾을 수 없습니다.')
+                        swal({
+                            title: "실패!",
+                            text: "이메일을 찾을 수 없습니다." ,
+                            icon: "error",
+                            buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                        });
                     }
                 })
                 .catch(error => {
-                    console.error('이메일 조회 중 오류가 발생했습니다:', error);
-
-                    alert('서버와 통신 중 오류가 발생했습니다.')
+                    swal({
+                        title: "실패!",
+                        text: "이메일 조회 중 오류가 발생했습니다. 다시 시도해주세요." + error.message,
+                        icon: "error",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    });
                 });
         });
     });

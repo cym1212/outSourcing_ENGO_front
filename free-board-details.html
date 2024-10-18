@@ -57,14 +57,14 @@
                     <a ><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
 
-                <div class="topbar-one__right">
-                    <div class="topbar-one__social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+<!--                <div class="topbar-one__right">-->
+<!--                    <div class="topbar-one__social">-->
+<!--                        <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-youtube"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -72,6 +72,11 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
+                     <div class="main-nav__left1">
+                        <a href="#" class="side-menu__toggler">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -120,13 +125,11 @@
                                     <li><a href="donation.html">후원신청</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown" id="loginMenu">
                                 <a href="login.html">로그인</a>
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
-                                    <li><a href="login.html">로그인</a></li>
-                                    <li><a id="logout" href="">로그 아웃</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
                             </li>
 
                         </ul>
@@ -178,8 +181,8 @@
             </table>
 
             <div class="notice-footer2">
-                <a href="free-board-edit.html" id="edit-notice2">수정</a>
-                <a href="" id="delete-notice2">삭제</a>
+                <a href="free-board-edit.html" id="edit-notice2" style="display: block;">수정</a>
+                <a href="" id="delete-notice2" style="display: block;">삭제</a>
                 <a href="free-board.html" id="back-notice2">목록</a>
                 <a href="" id="recommand-notice">추천하기</a>
             </div>
@@ -195,16 +198,17 @@
                         <span class="comment-time2">${new Date(comment.modifiedAt).toLocaleString()}</span>
                     </div>
                     <p class="comment-content2">${comment.comments}</p>
-                    ${getAccessToken() ? `
-                    <button class="edit-comment2" data-comment-id="${comment.id}">수정</button>
-                    <button class="delete-comment2" data-comment-id="${comment.id}">삭제</button>
+                    <div class="button-group2">
+                        <button class="edit-comment2" data-comment-id="${comment.id}">수정</button>
+                        <button class="delete-comment2" data-comment-id="${comment.id}">삭제</button>
+                    </div>
+
                 </div>
 
                 <!-- 새로운 댓글 작성 -->
                 <div class="comment-form2">
                     <h4>댓글 작성하기</h4>
                     <textarea id="new-comment2" placeholder="댓글을 입력하세요"></textarea>
-                    <input type="text" id="new-author2" placeholder="작성자 이름" />
                     <!-- 버튼을 감싸는 div 추가 -->
                     <div class="button-container2">
                         <button id="submit-comment2">댓글 작성</button>
@@ -233,6 +237,35 @@
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
+<div class="side-menu__block">
+    <div class="side-menu__block-overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div><!-- /.side-menu__block-overlay -->
+    <div class="side-menu__block-inner ">
+        <div class="side-menu__top justify-content-end">
+            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                    src="assets/images/shapes/close-1-1.png" alt=""></a>
+        </div><!-- /.side-menu__top -->
+
+        <nav class="mobile-nav__container">
+            <!-- content is loading via js -->
+        </nav>
+
+        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+
+        <div class="side-menu__content">
+            <p><a href="mailto:gislmh@naver.com">gislmh@naver.com</a> <br> <a href="tel:010-5850-8885">010-5850-8885</a></p>
+            <!--            <div class="side-menu__social">-->
+            <!--                <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-twitter"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-instagram"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-pinterest-p"></i></a>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
@@ -254,6 +287,7 @@
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/jquery.bxslider.min.js"></script>
 <script src="assets/js/appear.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
@@ -269,25 +303,57 @@
             fetchBoardDetails();
             fetchComments();
         } else{
-            alert('게시글 ID가 없습니다. 게시글 목록으로 돌아갑니다.');
-            window.location.href = 'free-board.html';
+            swal({
+                title: "경고!",
+                text: "게시글 ID가 없습니다. 게시글 목록으로 돌아갑니다. " ,
+                icon: "error",
+                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+            }).then(() => {
+                window.location.href = 'free-board.html';
+            });
             return;
         }
 
         // 게시글 상세 조회 함수
         function fetchBoardDetails() {
-            fetch(`http://49.247.174.32:8080/second-board/${postId}`)
+            // fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}`)
+            fetchWithAuth(`http://localhost:8080/second-board/${postId}`)
                 .then(response => response.json())
                 .then(data => {
+                    localStorage.setItem('requestUserId', data.requestUserId);  // requestUserId 저장
+                    localStorage.setItem('requestUserRole', data.requestUserRole);
                     displayBoardDetails(data);
                 })
                 .catch(error => {
-                    console.error('게시글을 불러오는 중 오류가 발생했습니다:', error);
+                    swal({
+                        title: "실패!",
+                        text: "게시글을 불러오는 중 오류가 발생했습니다: "+error.message ,
+                        icon: "error",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    });
                 });
         }
 
         // 게시글 상세 정보를 화면에 출력하는 함수
         function displayBoardDetails(data) {
+            const requestId = data.requestUserId;
+            const userRole = data.requestUserRole;
             detailsTable.innerHTML = `
             <tr>
                 <th>이름</th><td>${data.name}</td>
@@ -304,6 +370,18 @@
                 <td colspan="4" class="content">${data.content}</td>
             </tr>
         `;
+            const editButton = document.getElementById('edit-notice2');
+            const deleteButton = document.getElementById('delete-notice2');
+
+            if (requestId !== 0 && (requestId === data.authorId || userRole === 'ADMIN')) {
+                // 작성자이거나 관리자일 경우 버튼 표시
+                editButton.style.display = 'inline-block';
+                deleteButton.style.display = 'inline-block';
+            } else {
+                // 그렇지 않은 경우 버튼 숨기기
+                editButton.style.display = 'none';
+                deleteButton.style.display = 'none';
+            }
         }
 
 
@@ -311,39 +389,137 @@
 
         document.getElementById('recommand-notice').addEventListener('click', function (e) {
             e.preventDefault();
-
+            if (!getAccessToken()) {
+                swal({
+                    title: "경고!",
+                    text: "로그인이 필요합니다." ,
+                    icon: "error",
+                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                }).then(() => {
+                    window.location.href = 'login.html'
+                });
+                return;
+            }
             if (isLiked) {
-                fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/unlike`, {
+                // fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/unlike`, {
+                fetchWithAuth(`http://localhost:8080/second-board/${postId}/unlike`, {
                     method: 'POST'
                 })
                     .then(response => {
                         if (response.ok) {
                             isLiked = false;
                             fetchBoardDetails();
-                            alert('추천이 취소되었습니다.');
+                            swal({
+                                title: "성공!",
+                                text: "추천이 취소되었습니다." ,
+                                icon: "success",
+                                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                            });
                         } else {
-                            throw new Error('추천 취소 중 오류가 발생했습니다.');
+                            swal({
+                                title: "실패!",
+                                text: "추천 취소 중 오류가 발생했습니다." ,
+                                icon: "error",
+                                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                            });
                         }
                     })
                     .catch(error => {
-                        console.error('추천 취소 중 오류가 발생했습니다:', error);
+                        swal({
+                            title: "실패!",
+                            text: "추천 취소 중 오류가 발생했습니다:"+error.message ,
+                            icon: "error",
+                            buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                        });
                     });
             } else {
 
-                fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/like`, {
+                // fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/like`, {
+                fetchWithAuth(`http://localhost:8080/second-board/${postId}/like`, {
                     method: 'POST'
                 })
                     .then(response => {
                         if (response.ok) {
                             isLiked = true;
                             fetchBoardDetails();
-                            alert('추천되었습니다.');
+                            swal({
+                                title: "성공!",
+                                text: "추천되었습니다." ,
+                                icon: "success",
+                                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                            });
                         } else {
-                            throw new Error('추천 중 오류가 발생했습니다.');
+                            swal({
+                                title: "실패!",
+                                text: "추천 취소 중 오류가 발생했습니다." ,
+                                icon: "error",
+                                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                            });
                         }
                     })
                     .catch(error => {
-                        console.error('추천 중 오류가 발생했습니다:', error);
+                        swal({
+                            title: "실패!",
+                            text: "추천 취소 중 오류가 발생했습니다:"+error.message ,
+                            icon: "error",
+                            buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                        });
                     });
             }
         });
@@ -351,47 +527,113 @@
         document.getElementById('delete-notice2').addEventListener('click', function (e) {
             e.preventDefault();
 
-            if (confirm('정말로 이 게시글을 삭제하시겠습니까?')) {
-                // 삭제 요청 API 호출
-                fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}`, {
-                    method: 'DELETE'
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            alert('게시글이 삭제되었습니다.');
-                            window.location.href = 'free-board.html';
-                        } else {
-                            alert('권한이 없습니다.');
+            swal({
+                title: "게시글 삭제",
+                text: "정말로 이 게시글을 삭제하시겠습니까?",
+                icon: "warning",
+                buttons: ["취소", "삭제"],
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        // fetchWithAuth(`http://49.247.174.32:8080/third-board/${postId}`, {
+                        fetchWithAuth(`http://localhost:8080/second-board/${postId}`, {
+                            method: 'DELETE'
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    swal({
+                                        title: "성공!",
+                                        text: "게시글이 삭제되었습니다.",
+                                        icon: "success",
+                                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
                         }
-                    })
-                    .catch(error => {
-                        console.error('게시글 삭제 중 오류가 발생했습니다:', error);
-                    });
-            }
+                                    }).then(() => {
+                                        window.location.href = 'free-board.html';
+                                    });
+
+                                } else {
+                                    swal({
+                                        title: "경고!",
+                                        text: "삭제할 권한이 없습니다.",
+                                        icon: "warning",
+                                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                                    });
+                                }
+                            })
+                            .catch(error => {
+                                swal({
+                                    title: "실패!",
+                                    text: "게시글 삭제 중 오류가 발생했습니다:"+error.message,
+                                    icon: "error",
+                                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                                });
+                            });
+                    }
+                });
         });
 
 
         // 댓글 조회 함수
         function fetchComments() {
-            fetch(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments`)
+            // fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments`)
+            fetchWithAuth(`http://localhost:8080/second-board/${postId}/second-board-comments`)
                 .then(response => response.json())
                 .then(data => {
                     displayComments(data.content);
                 })
                 .catch(error => {
-                    console.error('댓글을 불러오는 중 오류가 발생했습니다:', error);
+                    swal({
+                        title: "실패!",
+                        text: "댓글을 불러오던 중 오류가 발생했습니다." ,
+                        icon: "error",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    });
                 });
         }
 
         // 댓글 목록을 화면에 출력하는 함수
         function displayComments(comments) {
             commentsSection.innerHTML = '';
-
+            const requestId = localStorage.getItem('requestUserId');
+            const userRole = localStorage.getItem('requestUserRole');
             // 댓글이 있는 경우 목록 출력
             comments.forEach(comment => {
                 const commentElement = document.createElement('div');
                 commentElement.classList.add('comment2');
                 commentElement.setAttribute('data-comment-id', comment.id);
+
                 if (comment.deleted ===true) {
                     commentElement.innerHTML = `
                 <div class="comment-header2">
@@ -402,16 +644,29 @@
             `;
                 } else {
                     // 댓글이 삭제되지 않은 경우 수정 및 삭제 버튼 포함
+
+                    // 여기서 부터 다시
+
                     commentElement.innerHTML = `
                 <div class="comment-header2">
                     <span class="comment-author2">작성자 : ${comment.memberName}</span>
                     <span class="comment-time2">${new Date(comment.modifiedAt).toLocaleString()}</span>
                 </div>
                 <p class="comment-content2">${comment.comments}</p>
-                ${getAccessToken() ? `
-                    <button class="edit-comment2" data-comment-id="${comment.id}">수정</button>
-                    <button class="delete-comment2" data-comment-id="${comment.id}">삭제</button>` : ''}
+                <div class="button-group2">
+                <button class="edit-comment2" style="display: none;" data-comment-id="${comment.id}">수정</button>
+                <button class="delete-comment2" style="display: none;" data-comment-id="${comment.id}">삭제</button>
+</div>
+
             `;
+
+                    // 수정 및 삭제 버튼을 표시할지 여부 결정
+                    if (requestId !== '0' && (requestId == comment.authorId || userRole === 'ADMIN')) {
+                        const editButton = commentElement.querySelector('.edit-comment2');
+                        const deleteButton = commentElement.querySelector('.delete-comment2');
+                        editButton.style.display = 'inline-block';
+                        deleteButton.style.display = 'inline-block';
+                    }
                 }
                 commentsSection.appendChild(commentElement);
             });
@@ -460,19 +715,47 @@
             const commentText = document.getElementById('new-comment2').value;
 
             if (!getAccessToken()) {
-                alert('로그인이 필요합니다.');
-                window.location.href = 'login.html'
+                swal({
+                    title: "경고!",
+                    text: "로그인이 필요합니다." ,
+                    icon: "error",
+                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                }).then(() => {
+                    window.location.href = 'login.html'
+                });
                 return;
             }
             if (!commentText.trim()) {
-                alert('댓글 내용을 입력하세요.');
+                swal({
+                    title: "경고!",
+                    text: "댓글의 내용을 입력하세요." ,
+                    icon: "error",
+                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                });
                 return;
             }
             const requestData = {
                 comments: commentText,
             };
 
-            fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments/create`, {
+            // fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments/create`, {
+            fetchWithAuth(`http://localhost:8080/second-board/${postId}/second-board-comments/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -481,11 +764,38 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    alert('댓글이 성공적으로 작성되었습니다.');
-                    fetchComments();
+                    swal({
+                        title: "성공!",
+                        text: "댓글이 성공적으로 작성되었습니다." ,
+                        icon: "success",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    }).then(() => {
+                        fetchComments();
+                    });
                 })
                 .catch(error => {
-                    console.error('댓글 작성 중 오류가 발생했습니다:', error);
+                    swal({
+                        title: "실패!",
+                        text: "댓글 작성 중 오류가 발생했습니다: "+error.message ,
+                        icon: "error",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    });
                 });
         }
 
@@ -495,7 +805,20 @@
             const commentElement = document.querySelector(`.comment2[data-comment-id="${commentId}"]`);
 
             if (!commentElement) {
-                console.error(`댓글을 찾을 수 없습니다. commentId: ${commentId}`);
+                swal({
+                    title: "실패!",
+                    text: "댓글을 찾을 수 없습니다." ,
+                    icon: "error",
+                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                });
                 return;
             }
 
@@ -516,12 +839,26 @@
                 const newContent = commentElement.querySelector('.edit-comment-input').value;
 
                 if (!newContent.trim()) {
-                    alert('댓글 내용을 입력하세요.');
+                    swal({
+                        title: "경고!",
+                        text: "댓글 내용을 입력하세요." ,
+                        icon: "warning",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    });
                     return;
                 }
 
                 // Fetch API를 통해 서버로 수정된 내용 전송
-                fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments/update/${commentId}`, {
+                // fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments/update/${commentId}`, {
+                fetchWithAuth(`http://localhost:8080/second-board/${postId}/second-board-comments/update/${commentId}`, {
                     method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'
@@ -530,20 +867,73 @@
                 })
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error(`서버 응답 오류: ${response.status}`);
+                            swal({
+                                title: "실패!",
+                                text: "서버 응답 오류. 다시한번 시도해 주세요." ,
+                                icon: "error",
+                                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                            });
                         }
                         return response.json();
                     })
                     .then(data => {
                         if (data) {
-                            alert('댓글이 성공적으로 수정되었습니다.');
-                            fetchComments();
+                            swal({
+                                title: "성공!",
+                                text: "댓글이 성공적으로 수정되었습니다." ,
+                                icon: "success",
+                                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                            }).then(() => {
+                                fetchComments();
+                            });
                         } else {
-                            alert('권한이 없습니다.');
+                            swal({
+                                title: "경고!",
+                                text: "댓글에 대한 권한이 없습니다." ,
+                                icon: "warning",
+                                buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                            });
                         }
                     })
                     .catch(error => {
-                        console.error('댓글 수정 중 오류가 발생했습니다:', error);
+                        swal({
+                            title: "실패!",
+                            text: "댓글 수정 중 오류가 발생했습니다: "+error.message ,
+                            icon: "error",
+                            buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                        });
                     });
             });
 
@@ -556,17 +946,54 @@
 
         // 댓글 삭제 함수
         function deleteComment(commentId) {
-            if (!confirm('댓글을 삭제하시겠습니까?')) return;
-
-            fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments/delete/${commentId}`, {
-                method: 'DELETE'
+            swal({
+                title: "댓글 삭제",
+                text: "정말로 이 댓글을 삭제하시겠습니까?",
+                icon: "warning",
+                buttons: ["취소", "삭제"],
+                dangerMode: true,
             })
-                .then(() => {
-                    alert('댓글이 성공적으로 삭제되었습니다.');
-                    fetchComments();
-                })
-                .catch(error => {
-                    alert('권한이 없습니다.');
+                .then((willDelete) => {
+                    if (willDelete) {
+                        // fetchWithAuth(`http://49.247.174.32:8080/second-board/${postId}/second-board-comments/delete/${commentId}`, {
+                        fetchWithAuth(`http://localhost:8080/second-board/${postId}/second-board-comments/delete/${commentId}`, {
+                            method: 'DELETE'
+                        })
+                            .then(() => {
+                                swal({
+                                    title: "성공!",
+                                    text: "댓글이 성공적으로 삭제되었습니다.",
+                                    icon: "success",
+                                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                                }).then(() => {
+                                    fetchComments(); // 댓글 삭제 후 댓글 목록 새로고침
+                                });
+                            })
+                            .catch(error => {
+                                swal({
+                                    title: "경고!",
+                                    text: "댓글에 대한 권한이 없습니다.",
+                                    icon: "warning",
+                                    buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                                });
+                            });
+                    }
                 });
         }
     });

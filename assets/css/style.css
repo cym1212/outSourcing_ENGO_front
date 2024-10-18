@@ -35,6 +35,36 @@
 /*-------------------------------------------------------------
  # 내가 작업한 파일들
 ------------------------------------------------------------- */
+
+.swal-button--green {
+    background-color: #4CAF50; /* Green color */
+    color: white;              /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.swal-button--red {
+    background-color: red; /* Green color */
+    color: white;              /* Text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.custom-confirm-btn {
+    background-color: #4CAF50; /* Example color: Tomato */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-confirm-btn:hover {
+    background-color: #45A049 !important; /* Darker shade on hover */
+}
+
+
 #main-title{
     font-size: 5rem !important;
     font-weight: bold;
@@ -129,7 +159,18 @@
 /*}*/
 
 
-
+.design1 p{
+    padding-left: 1.2rem;
+}
+.consult_div1 p{
+    padding-left: 1.2rem;
+}
+#consult_h4_1{
+    font-size: 1.35rem;
+}
+#donation_bold1{
+    color: #0b0b0b;
+}
 
 .ci_section{
     position: relative;
@@ -273,7 +314,36 @@
     font-size: 1.5rem;
 
 }
+.environmental_circle1 {
+    width: 20rem; /* 원의 가로 크기 */
+    height: 20rem; /* 원의 세로 크기 */
+    background-color: #58A75F; /* 원의 배경색 */
+    color: white; /* 글씨 색 */
+    border-radius: 50%; /* 원 모양으로 만듦 */
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 자식 요소를 세로로 배치 */
+    justify-content: center; /* 세로 방향 가운데 정렬 */
+    align-items: center; /* 가로 방향 가운데 정렬 */
+    font-size: 20px; /* 글씨 크기 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
 
+.environmental_circle1 p {
+    margin: 0; /* 여백 제거 */
+    padding: 0;
+    color: white; /* 글씨 색 */
+}
+.environmental_circle1 p:nth-child(1) {
+    font-size: 1.6rem; /* 첫 번째 p 태그 */
+}
+
+.environmental_circle1 p:nth-child(2) {
+    font-size: 1.25rem; /* 두 번째 p 태그 */
+}
+#environmental_circle1_1{
+    font-size: 2.7rem;
+    line-height: 3.2rem;
+}
 .info-section {
     display: flex;
     justify-content: center;
@@ -296,10 +366,12 @@
     max-width: 350px; /* 최대 너비 */
     height: 300px; /* 고정된 높이 */
 }
-#education-img-2{
-    padding-top: 30px;
-}
 
+.info-icon1 img {
+    width: 50px; /* 아이콘 크기 */
+    height: auto;
+    padding-top:12px;
+}
 .info-icon {
     margin-bottom: 20px;
 }
@@ -307,7 +379,6 @@
 .info-icon img {
     width: 50px; /* 아이콘 크기 */
     height: auto;
-    padding-top:12px;
 }
 
 .info-section h3 {
@@ -334,7 +405,7 @@
     padding: 20px;
     margin-top: 50px;
 }
-.education-section1 p{
+.education-section1_1 > p{
     color: #0b0b0b;
     font-size: 3rem;
     text-align: center;
@@ -376,7 +447,7 @@
 
 /* 단계 라벨 */
 .step-label {
-    background-color: #7da445;
+    background-color: #58A75F;
     color: white;
     font-weight: bolder;
     border-radius: 5px;
@@ -630,8 +701,8 @@
 }
 
 #create-form1,#create-form2,#create-form4 {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 100%;
+    margin: 30px ;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -718,8 +789,8 @@
 }
 
 #create-form3 {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 100%;
+    margin: 30px;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -809,8 +880,8 @@
 }
 
 #edit-form1,#edit-form2,#edit-form4 {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 100%;
+    margin: 30px ;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -855,8 +926,8 @@
 }
 
 #edit-form3 {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 100%;
+    margin: 30px ;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -948,8 +1019,8 @@
 
 #notice-details1,#notice-details2,#notice-details3,#notice-details4 {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    margin: 30px auto;
+    padding: 20px;
     border-collapse: collapse;
 }
 
@@ -960,10 +1031,11 @@
 #notice-details3 th,
 #notice-details3 td,
 #notice-details4 th,
-#notice-details4 td{
-    padding: 15px;
+#notice-details4 td {
+
+    padding: 5px 5px 5px 10px;
     border: 1px solid #ddd;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 #notice-details1 th,#notice-details2 th,#notice-details3 th,#notice-details4 th {
@@ -989,14 +1061,13 @@
     justify-content: right;
     gap: 10px;
     margin-bottom: 20px;
-    margin-right: 185px;
 }
 
 
 .notice-footer1 a,.notice-footer2 a,.notice-footer3 a,.notice-footer4 a {
     background-color: seagreen;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 10px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -1022,7 +1093,7 @@
 
 /* 댓글 섹션 스타일 */
 .comments-section1,.comments-section2,.comments-section3,.comments-section4 {
-    max-width: 800px;
+    width: 100%;
     margin: 30px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -1036,7 +1107,7 @@
     color: #0b0b0b;
 }
 
-.comment1,.comment2,.comment3,.comment4 {
+.comment1, .comment2, .comment3, .comment4 {
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 2px solid #D3D3D3;
@@ -1097,11 +1168,40 @@
     border-radius: 4px;
     margin-bottom: 10px;
 }
+.button-group1,.button-group2,.button-group3,.button-group4,.edit-buttons {
+    display: flex;  /* 버튼을 가로로 나열 */
+    justify-content: flex-end; /* 버튼을 오른쪽 끝으로 정렬 */
+    gap: 10px; /* 버튼 간격 추가 */
+    width: 100%; /* 버튼 그룹이 부모 요소의 전체 너비를 차지하게 설정 */
+}
+
+.edit-comment1, .edit-comment2, .edit-comment3, .edit-comment4,
+.delete-comment1, .delete-comment2, .delete-comment3, .delete-comment4
+,.save-comment-btn,.cancel-comment-btn{
+    background-color: #87CEEB;  /* 수정 버튼 색상 */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* 버튼을 inline-block으로 설정하여 크기를 글자 크기에 맞춤 */
+    width: auto;  /* 자동 크기 설정 */
+}
+
+.delete-comment1, .delete-comment2, .delete-comment3, .delete-comment4 {
+    background-color: #FF6347; /* 삭제 버튼 색상 */
+}
+
+.edit-comment1:hover, .edit-comment2:hover, .edit-comment3:hover, .edit-comment4:hover,
+.delete-comment1:hover, .delete-comment2:hover, .delete-comment3:hover, .delete-comment4:hover {
+    opacity: 0.8;  /* 호버 시 강조 효과 */
+}
 
 #submit-comment1,#submit-comment2,#submit-comment3,#submit-comment4 {
     background-color: seagreen;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -1331,7 +1431,7 @@
 
 
 #main_page_h4_1{
-    font-size: 3rem;
+    font-size: 2.7rem;
 }
 
 #main_page_image1 {
@@ -2025,6 +2125,83 @@ h6 {
     background-color: #f5f0e9;
 }
 
+@media only screen and (max-width: 768px) {
+    /* 상단바 스타일 조정 */
+    .topbar-one .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100px;
+    }
+    .topbar-one__left, .topbar-one__right {
+        margin-bottom: 10px;
+    }
+
+    /* 네비게이션 메뉴 조정 */
+    .main-nav__main-navigation {
+        display: block; /* 가로 정렬 대신 세로 정렬로 변경 */
+    }
+    .main-nav__main-navigation .main-nav__navigation-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-nav__main-navigation .main-nav__navigation-box > li {
+        margin: 10px 0;
+        padding: 15px 0;
+    }
+
+    /* 로고 크기 조정 */
+    .main-nav__left {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+    .main-nav__left img {
+        max-width: 150px; /* 로고 크기를 작게 조정 */
+    }
+
+    /* 소셜 아이콘 크기 및 간격 조정 */
+    .topbar-one__social a {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    /* 상단 메뉴의 여백 조정 */
+    .topbar-one__left a {
+        font-size: 16px;
+        margin-left: 15px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    /* 상단바 조정 */
+    .topbar-one .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* 네비게이션 메뉴 크기 조정 */
+    .main-nav__main-navigation .main-nav__navigation-box > li {
+        margin-left: 20px; /* 메뉴 간격 조정 */
+    }
+
+    /* 로고 크기 조정 */
+    .main-nav__left img {
+        max-width: 180px; /* 로고 크기 조정 */
+    }
+
+    /* 소셜 아이콘 크기 */
+    .topbar-one__social a {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* 메뉴의 간격 조정 */
+    .main-nav__main-navigation .main-nav__navigation-box > li > a {
+        font-size: 15px; /* 텍스트 크기 조정 */
+        padding: 0 10px;
+    }
+}
 /*--------------------------------------------------------------
 # Main Menu
 --------------------------------------------------------------*/
@@ -2056,10 +2233,10 @@ h6 {
 .main-nav__search:hover {
     color: var(--thm-base);
 }
-.main-nav__left .side-menu__toggler {
+.main-nav__left1 .side-menu__toggler {
     position: relative;
     display: inline-block;
-    margin-left: 30px;
+    margin-right: 10px;
     font-size: 20px;
     color: var(--thm-black);
 }
@@ -2779,7 +2956,7 @@ h6 {
 }
 
 @media (min-width: 1200px) {
-    .main-nav__left .side-menu__toggler {
+    .main-nav__left1 .side-menu__toggler {
         display: none;
     }
     .main-nav__main-navigation {
@@ -3906,6 +4083,7 @@ h6 {
     opacity: 1;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
+    padding-right: 20px;
 }
 .single_brand_item img:hover {
     opacity: 1;
@@ -4017,7 +4195,7 @@ h6 {
 .video-one h3 {
     color: #fff;
     margin: 2px;
-    font-size: 5rem;
+    font-size: 4rem;
     margin-top: 14px;
     font-weight: 500;
     line-height: 1.1;

@@ -54,17 +54,17 @@
                 <div class="topbar-one__left">
                     <a href="tel:010-5850-8885"><span class="icon-phone-call"></span>010-5850-8885</a>
                     <a href="mailto:gislmh@naver.com"><span class="icon-message"></span>gislmh@naver.com</a>
-                    <a ><span class="icon-clock"></span>9AM - 6PM</a>
+                    <a><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
 
-                <div class="topbar-one__right">
-                    <div class="topbar-one__social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+                <!--                <div class="topbar-one__right">-->
+                <!--                    <div class="topbar-one__social">-->
+                <!--                        <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+                <!--                        <a href="#"><i class="fab fa-twitter"></i></a>-->
+                <!--                        <a href="#"><i class="fab fa-youtube"></i></a>-->
+                <!--                        <a href="#"><i class="fab fa-instagram"></i></a>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
         </div>
 
@@ -72,6 +72,11 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
+                     <div class="main-nav__left1">
+                        <a href="#" class="side-menu__toggler">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -120,13 +125,11 @@
                                     <li><a href="donation.html">후원신청</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown" id="loginMenu">
                                 <a href="login.html">로그인</a>
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
-                                    <li><a href="login.html">로그인</a></li>
-                                    <li><a id="logout" href="">로그 아웃</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
                             </li>
 
                         </ul>
@@ -153,10 +156,10 @@
             <h2 id="introduction">협회 자료</h2>
             <h2 id="create-title4">게시글 작성</h2>
 
-            <form id="create-form4" >
+            <form id="create-form4">
                 <div class="form-group4">
                     <label for="title">제목</label>
-                    <input type="text" id="title" name="title" required placeholder="제목을 입력하세요" />
+                    <input type="text" id="title" name="title" required placeholder="제목을 입력하세요"/>
                 </div>
 
 
@@ -174,14 +177,13 @@
     </section>
 
 
-
     <div class="site-footer_bottom">
         <div class="container">
             <div class="site-footer_bottom_copyright">
-                <p> <a href="donation.html">@ 한국 환경협회</a></p>
+                <p><a href="donation.html">@ 한국 환경협회</a></p>
             </div>
             <div class="site-footer_bottom_copyright">
-                <p> 고유번호 : 497-82-00350  </p>
+                <p> 고유번호 : 497-82-00350 </p>
             </div>
         </div>
     </div>
@@ -193,7 +195,34 @@
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
+<div class="side-menu__block">
+    <div class="side-menu__block-overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div><!-- /.side-menu__block-overlay -->
+    <div class="side-menu__block-inner ">
+        <div class="side-menu__top justify-content-end">
+            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                    src="assets/images/shapes/close-1-1.png" alt=""></a>
+        </div><!-- /.side-menu__top -->
 
+        <nav class="mobile-nav__container">
+            <!-- content is loading via js -->
+        </nav>
+
+        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+
+        <div class="side-menu__content">
+            <p><a href="mailto:gislmh@naver.com">gislmh@naver.com</a> <br> <a href="tel:010-5850-8885">010-5850-8885</a></p>
+            <!--            <div class="side-menu__social">-->
+            <!--                <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-twitter"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-instagram"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-pinterest-p"></i></a>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -216,6 +245,7 @@
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/jquery.bxslider.min.js"></script>
 <script src="assets/js/appear.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
@@ -230,8 +260,22 @@
         const submitButton = document.getElementById('submit-notice4');
 
         if (!getAccessToken()) {
-            alert('로그인이 필요합니다.');
-            window.location.href = 'login.html'
+            swal({
+                title: "Error!",
+                text: "로그인이 필요합니다. ",
+                icon: "error",
+                buttons: {
+                    confirm: {
+                        text: "확인",
+                        value: true,
+                        visible: true,
+                        className: "custom-confirm-btn",
+                        closeModal: true
+                    }
+                }
+            }).then(() => {
+                window.location.href = 'login.html'
+            });
             return;
         }
         // 게시글 작성 폼 제출 이벤트 처리
@@ -242,7 +286,20 @@
             const content = contentInput.value;
 
             if (!title.trim() || !content.trim()) {
-                alert('게시물을 작성하세요.');
+                swal({
+                    title: "Error!",
+                    text: "게시물을 작성하세요. ",
+                    icon: "error",
+                    buttons: {
+                        confirm: {
+                            text: "확인",
+                            value: true,
+                            visible: true,
+                            className: "custom-confirm-btn",
+                            closeModal: true
+                        }
+                    }
+                });
                 return;
             }
             const requestData = {
@@ -251,7 +308,8 @@
             };
 
 
-            fetchWithAuth('http://49.247.174.32:8080/third-board/create', {
+            // fetchWithAuth('http://49.247.174.32:8080/third-board/create', {
+            fetchWithAuth('http://localhost:8080/third-board/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -260,17 +318,74 @@
             })
                 .then(response => {
                     if (response.status === 201) {
-                        alert('게시글이 성공적으로 작성되었습니다.');
-                        window.location.href = 'data-room.html';
+                        swal({
+                            title: "Success!",
+                            text: "게시글이 성공적으로 작성되었습니다. ",
+                            icon: "success",
+                            buttons: {
+                                confirm: {
+                                    text: "확인",
+                                    value: true,
+                                    visible: true,
+                                    className: "custom-confirm-btn",
+                                    closeModal: true
+                                }
+                            }
+                        }).then(() => {
+                            window.location.href = 'data-room.html';
+                        });
+
                     } else if (response.status === 401) {
-                        alert('사용자가 인증되지 않았습니다. 로그인이 필요합니다.');
+                        swal({
+                            title: "Error!",
+                            text: "사용자가 인증되지 않았습니다. 로그인이 필요합니다. ",
+                            icon: "error",
+                            buttons: {
+                                confirm: {
+                                    text: "확인",
+                                    value: true,
+                                    visible: true,
+                                    className: "custom-confirm-btn",
+                                    closeModal: true
+                                }
+                            }
+                        }).then(() => {
+                            window.location.href = 'login.html';
+                        });
                     } else {
-                        alert('게시글 작성 중 오류가 발생했습니다.');
+                        swal({
+                            title: "Error!",
+                            text: "게시글 작성 중 오류가 발생했습니다. 다시 시도해주세요! ",
+                            icon: "error",
+                            buttons: {
+                                confirm: {
+                                    text: "확인",
+                                    value: true,
+                                    visible: true,
+                                    className: "custom-confirm-btn",
+                                    closeModal: true
+                                }
+                            }
+                        });
+
                     }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
-                    alert('게시글 작성 중 오류가 발생했습니다.');
+                    swal({
+                        title: "Error!",
+                        text: "게시글 작성 중 오류가 발생했습니다 : " + error.message,
+                        icon: "error",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    });
+
                 });
         });
     });

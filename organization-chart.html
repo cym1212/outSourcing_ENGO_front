@@ -57,14 +57,14 @@
                     <a ><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
 
-                <div class="topbar-one__right">
-                    <div class="topbar-one__social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+<!--                <div class="topbar-one__right">-->
+<!--                    <div class="topbar-one__social">-->
+<!--                        <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-youtube"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -72,6 +72,11 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
+                     <div class="main-nav__left1">
+                        <a href="#" class="side-menu__toggler">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -120,13 +125,11 @@
                                     <li><a href="donation.html">후원신청</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown" id="loginMenu">
                                 <a href="login.html">로그인</a>
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
-                                    <li><a href="login.html">로그인</a></li>
-                                    <li><a id="logout" href="">로그 아웃</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
                             </li>
 
                         </ul>
@@ -180,6 +183,35 @@
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
+<div class="side-menu__block">
+    <div class="side-menu__block-overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div><!-- /.side-menu__block-overlay -->
+    <div class="side-menu__block-inner ">
+        <div class="side-menu__top justify-content-end">
+            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                    src="assets/images/shapes/close-1-1.png" alt=""></a>
+        </div><!-- /.side-menu__top -->
+
+        <nav class="mobile-nav__container">
+            <!-- content is loading via js -->
+        </nav>
+
+        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+
+        <div class="side-menu__content">
+            <p><a href="mailto:gislmh@naver.com">gislmh@naver.com</a> <br> <a href="tel:010-5850-8885">010-5850-8885</a></p>
+            <!--            <div class="side-menu__social">-->
+            <!--                <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-twitter"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-instagram"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-pinterest-p"></i></a>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
+
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -202,7 +234,7 @@
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/jquery.bxslider.min.js"></script>
 <script src="assets/js/appear.js"></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/tokenManager.js"></script>

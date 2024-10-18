@@ -41,7 +41,8 @@
 
 <div class="preloader">
     <img src="assets/images/loader.png" class="preloader__image" alt="">
-</div><!-- /.preloader -->
+</div>
+<!-- /.preloader -->
 
 <div class="page-wrapper">
 
@@ -54,17 +55,17 @@
                 <div class="topbar-one__left">
                     <a href="tel:010-5850-8885"><span class="icon-phone-call"></span>010-5850-8885</a>
                     <a href="mailto:gislmh@naver.com"><span class="icon-message"></span>gislmh@naver.com</a>
-                    <a ><span class="icon-clock"></span>9AM - 6PM</a>
+                    <a><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
 
-                <div class="topbar-one__right">
-                    <div class="topbar-one__social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+<!--                <div class="topbar-one__right">-->
+<!--                    <div class="topbar-one__social">-->
+<!--                        <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-youtube"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -72,9 +73,14 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="main-nav__left1">
+                        <a href="#" class="side-menu__toggler">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
-                            <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
+                            <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image" />
                         </a>
 
                     </div>
@@ -89,7 +95,8 @@
                                     <li><a href="vision.html">협회비전</a></li>
                                     <li><a href="ci.html">협회 CI</a></li>
 
-                                </ul><!-- /.sub-menu -->
+                                </ul>
+                                <!-- /.sub-menu -->
                             </li>
                             <li class="dropdown current">
                                 <a href="environmental-program.html">협회 사업</a>
@@ -98,7 +105,8 @@
                                     <li><a href="environmental-program.html">환경 체험 프로그램</a></li>
                                     <li><a href="nature-restoration-project.html">풀빛 세상 만들기</a></li>
                                     <li><a href="csr-consulting.html">기업 사회 공헌 컨설팅</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
+                                <!-- /.sub-menu -->
                             </li>
                             <li class="dropdown">
                                 <a href="notice.html">커뮤니티</a>
@@ -106,30 +114,32 @@
                                     <li><a href="notice.html">공지사항</a></li>
                                     <li><a href="free-board.html">자유게시판</a></li>
                                     <li><a href="gallery.html">사진갤러리</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
+                                <!-- /.sub-menu -->
                             </li>
                             <li class="dropdown">
                                 <a href="data-room.html">자료실</a>
                                 <ul>
                                     <li><a href="data-room.html">협회 자료</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
+                                <!-- /.sub-menu -->
                             </li>
                             <li class="dropdown">
                                 <a href="donation.html">후원 안내</a>
                                 <ul>
                                     <li><a href="donation.html">후원신청</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
+                                <!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown" id="loginMenu">
                                 <a href="login.html">로그인</a>
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
-                                    <li><a href="login.html">로그인</a></li>
-                                    <li><a id="logout" href="">로그 아웃</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
                             </li>
                         </ul>
-                    </div><!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
 
@@ -161,7 +171,8 @@
                     <div class="company_consult_content_1">
                         <div class="company_consult_title_1 text-left">
                             <div class="consult1">
-                                <h4><b>기업 사회 공헌 컨설팅(Corporate Social Responsibility Programming)</b></h4>
+                                <h4><b>기업 사회 공헌 컨설팅</b></h4>
+                                <h4 id="consult_h4_1"><b>(Corporate Social Responsibility Programming)</b></h4>
                             </div>
 
 
@@ -170,10 +181,8 @@
                             </div>
                         </div>
                         <div>
-                            <p>근래에 들어 사회공헌활동을 하지 않는 기업을 찾아보기 힘들 정도로 각 기업들이 다양한 사회공헌활동을 모색하고 또 실천하고 있다.
-                                그러나 기업의 사회공헌활동이 대부분 수동적 입장에서 수행되는 차원을 넘지 못하는 추세임으로 사회적 책임단계를 체계화하고 사회적 가치를 창출하는 적극적이고 전략적인 사회공헌 활동으로 이루어져야 한다.
-                                따라서 기업의 사회공헌 컨설팅이란 투명 경영의 추세에 부응하고, 기업경영 전략과 적합성을 창출함과 동시에 그 구성원들의 자발적 참여를 유도할 수 있는 효과적인 사회공헌 Framework을 제공하고,
-                                비영리단체에 대한 전문성을 갖고 기업과 단체 그리고 시민과의 관계 설정에 있어서 뚜렷한 비젼을 제시하는 컨설팅 서비스를 말한다.</p>
+                            <p>근래에 들어 사회공헌활동을 하지 않는 기업을 찾아보기 힘들 정도로 각 기업들이 다양한 사회공헌활동을 모색하고 또 실천하고 있다. 그러나 기업의 사회공헌활동이 대부분 수동적 입장에서 수행되는 차원을 넘지 못하는 추세임으로 사회적 책임단계를 체계화하고 사회적 가치를 창출하는 적극적이고 전략적인 사회공헌 활동으로 이루어져야 한다. 따라서 기업의 사회공헌 컨설팅이란 투명 경영의 추세에 부응하고,
+                                기업경영 전략과 적합성을 창출함과 동시에 그 구성원들의 자발적 참여를 유도할 수 있는 효과적인 사회공헌 Framework을 제공하고, 비영리단체에 대한 전문성을 갖고 기업과 단체 그리고 시민과의 관계 설정에 있어서 뚜렷한 비젼을 제시하는 컨설팅 서비스를 말한다.</p>
                         </div>
 
                     </div>
@@ -198,9 +207,7 @@
                         </div>
                         <div>
 
-                            <p>사회공헌을 시작하려는 대기업 및 중소기업, 사회공헌 조직이나 재단을 창립하려는 기업, 조직내 사회공헌활동에 대한 체계 및 매뉴얼을 구축하고자 하는 기업,
-                                비영리단체와 전략적 파트너십을 구축하고자 하는 기업, 최근 사회공헌 경향(Trend)에 부응하고자 하는 기업,
-                                CEO 중심이 아닌 회사의 시스템으로 사회공헌 활동을 기획하고자 하는 기업 등이 사회공헌 컨설팅 서비스를 받는데 효과적입니다.</p>
+                            <p>사회공헌을 시작하려는 대기업 및 중소기업, 사회공헌 조직이나 재단을 창립하려는 기업, 조직내 사회공헌활동에 대한 체계 및 매뉴얼을 구축하고자 하는 기업, 비영리단체와 전략적 파트너십을 구축하고자 하는 기업, 최근 사회공헌 경향(Trend)에 부응하고자 하는 기업, CEO 중심이 아닌 회사의 시스템으로 사회공헌 활동을 기획하고자 하는 기업 등이 사회공헌 컨설팅 서비스를 받는데 효과적입니다.</p>
                         </div>
 
                     </div>
@@ -230,29 +237,41 @@
                             </div>
                         </div>
                         <div class="consult3">
-                          <ol>
-                              <li><b>내용</b><ul>
-                                  <li>기업사회공헌의 철학적 기조와 전략</li>
-                                  <li>사회공헌활동의 테마와 영역의 설정(Positioning)</li>
-                                  <li>사회공헌활동의 프로그램 개발</li>
-                                  <li>비영리섹터와의 협력 및 사회공헌 활동의 확산 전략</li>
-                                  <li>자원개발과 실행시스템의 설계</li>
-                                  <li>자원봉사 활성화 및 고객 참여 유도 방안</li>
-                                  <li>실무자 교육 및 업무 매뉴얼</li>
-                                  <li>재단설립 컨설팅</li>
-                                  <li>기업윤리 시스템 구축</li>
-                              </ul></li>
-                              <li><b>주요방법</b><ul>
-                                  <li>내부 임직원 선호도 조사</li>
-                                  <li>국내 사회공헌 실무 리더십의 자문</li>
-                                  <li>공헌 영역(비영리 분야) 실무리더십 의견 반영</li>
-                                  <li>국내외 사례와 동향</li>
-                              </ul></li>
-                              <li><b>특징</b><p>일회성 사회공헌 프로그램이 아니라 기업의 이미지개선 및 사회적 참여를 중장기 전략에 부합되고,
-                                  사회공헌의 중장기 방향 설정과 이를 실현에 초점을 두어, 국내외의 다양한 기업 사회공헌 및 비영리 네트워크를 활용하여 가장 현실적인 구현 방법을 탐색한다.</p></li>
-                              <li><b>소요 기간</b><p>기업의 중장기적 의미와 관련 있지만, 기본적으로 3개월로 한다.</p></li>
-                              <li><b>Program 참여 인원</b><p>(사)한국환경협회 컨설턴트(기업사회공헌컨설턴트 자격증 소지자) 5명, 사회공헌 실무리더십 경험자 10명, 비영리 실무리더 10명, 약 20명 이내로 한다.</p></li>
-                          </ol>
+                            <ol>
+                                <li><b>내용</b>
+                                    <ul>
+                                        <li>기업사회공헌의 철학적 기조와 전략</li>
+                                        <li>사회공헌활동의 테마와 영역의 설정(Positioning)</li>
+                                        <li>사회공헌활동의 프로그램 개발</li>
+                                        <li>비영리섹터와의 협력 및 사회공헌 활동의 확산 전략</li>
+                                        <li>자원개발과 실행시스템의 설계</li>
+                                        <li>자원봉사 활성화 및 고객 참여 유도 방안</li>
+                                        <li>실무자 교육 및 업무 매뉴얼</li>
+                                        <li>재단설립 컨설팅</li>
+                                        <li>기업윤리 시스템 구축</li>
+                                    </ul>
+                                </li>
+                                <li><b>주요방법</b>
+                                    <ul>
+                                        <li>내부 임직원 선호도 조사</li>
+                                        <li>국내 사회공헌 실무 리더십의 자문</li>
+                                        <li>공헌 영역(비영리 분야) 실무리더십 의견 반영</li>
+                                        <li>국내외 사례와 동향</li>
+                                    </ul>
+                                </li>
+                                <div class="consult_div1">
+                                    <li><b>특징</b>
+                                        <p>일회성 사회공헌 프로그램이 아니라 기업의 이미지개선 및 사회적 참여를 중장기 전략에 부합되고, 사회공헌의 중장기 방향 설정과 이를 실현에 초점을 두어, 국내외의 다양한 기업 사회공헌 및 비영리 네트워크를 활용하여 가장 현실적인 구현 방법을 탐색한다.</p>
+                                    </li>
+                                    <li><b>소요 기간</b>
+                                        <p>기업의 중장기적 의미와 관련 있지만, 기본적으로 3개월로 한다.</p>
+                                    </li>
+                                    <li><b>Program 참여 인원</b>
+                                        <p>(사)한국환경협회 컨설턴트(기업사회공헌컨설턴트 자격증 소지자) 5명, 사회공헌 실무리더십 경험자 10명, 비영리 실무리더 10명, 약 20명 이내로 한다.</p>
+                                    </li>
+                                </div>
+
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -269,17 +288,47 @@
                 <p> <a href="donation.html">@ 한국 환경협회</a></p>
             </div>
             <div class="site-footer_bottom_copyright">
-                <p> 고유번호 : 497-82-00350  </p>
+                <p> 고유번호 : 497-82-00350 </p>
             </div>
         </div>
     </div>
 
 
-</div><!-- /.page-wrapper -->
+</div>
+<!-- /.page-wrapper -->
 
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
+
+<div class="side-menu__block">
+    <div class="side-menu__block-overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div><!-- /.side-menu__block-overlay -->
+    <div class="side-menu__block-inner ">
+        <div class="side-menu__top justify-content-end">
+            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                    src="assets/images/shapes/close-1-1.png" alt=""></a>
+        </div><!-- /.side-menu__top -->
+
+        <nav class="mobile-nav__container">
+            <!-- content is loading via js -->
+        </nav>
+
+        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+
+        <div class="side-menu__content">
+            <p><a href="mailto:gislmh@naver.com">gislmh@naver.com</a> <br> <a href="tel:010-5850-8885">010-5850-8885</a></p>
+            <!--            <div class="side-menu__social">-->
+            <!--                <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-twitter"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-instagram"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-pinterest-p"></i></a>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
 
 
 
@@ -304,11 +353,13 @@
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/jquery.bxslider.min.js"></script>
 <script src="assets/js/appear.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/tokenManager.js"></script>
 <script src="assets/js/logoutHandler.js"></script>
+
 </body>
 
 </html>

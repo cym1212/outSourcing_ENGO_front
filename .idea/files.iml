@@ -3,5 +3,6 @@
   <component name="NewModuleRootManager">
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="nanumsquare" level="application" />
+    <orderEntry type="library" name="sweetalert" level="application" />
   </component>
 </module>

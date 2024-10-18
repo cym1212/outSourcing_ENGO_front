@@ -57,14 +57,14 @@
                     <a ><span class="icon-clock"></span>9AM - 6PM</a>
                 </div>
 
-                <div class="topbar-one__right">
-                    <div class="topbar-one__social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+<!--                <div class="topbar-one__right">-->
+<!--                    <div class="topbar-one__social">-->
+<!--                        <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-twitter"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-youtube"></i></a>-->
+<!--                        <a href="#"><i class="fab fa-instagram"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
 
@@ -72,6 +72,11 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
+                     <div class="main-nav__left1">
+                        <a href="#" class="side-menu__toggler">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -120,13 +125,11 @@
                                     <li><a href="donation.html">후원신청</a></li>
                                 </ul><!-- /.sub-menu -->
                             </li>
-                            <li class="dropdown current">
+                            <li class="dropdown current" id="loginMenu">
                                 <a href="login.html">로그인</a>
                                 <ul>
                                     <li><a href="sign-up.html">회원 가입</a></li>
-                                    <li><a href="login.html">로그인</a></li>
-                                    <li><a id="logout" href="">로그 아웃</a></li>
-                                </ul><!-- /.sub-menu -->
+                                </ul>
                             </li>
 
                         </ul>
@@ -153,19 +156,22 @@
             <h2 id="introduction">회원 가입 </h2>
                 <div class="signup-section">
                     <div class="signup-box">
-                        <h2>Sign Up</h2>
+                        <h2>회원 가입</h2>
                         <form id="sign-up-form" method="post">
                             <div class="signup-form-group">
-                                <input type="email" id="email" placeholder="Email" required>
+                                <input type="email" id="email" placeholder="이메일" required>
                             </div>
                             <div class="signup-form-group">
-                                <input type="text" id="name" placeholder="Name" required>
+                                <input type="text" id="name" placeholder="이름" required>
                             </div>
                             <div class="signup-form-group">
-                                <input type="text" id="phone-number" placeholder="Phone Number" required>
+                                <input type="text" id="phone-number" placeholder="전화번호" required>
                             </div>
                             <div class="signup-form-group">
-                                <input type="password" id="password" placeholder="Password" required>
+                                <input type="password" id="password" placeholder="영문자,특수문자가 포함된 8~15자로 작성해주세요." required>
+                            </div>
+                            <div class="signup-form-group">
+                                <input type="password" id="confirmPassword" placeholder="비밀번호 확인" required>
                             </div>
                             <button type="submit" class="btn">회원 가입하기</button>
                             <p>이미 회원이신가요? <a id="login_1" href="login.html">로그인 하기</a></p>
@@ -194,20 +200,34 @@
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
 
-
-<div class="search-popup">
-    <div class="search-popup__overlay custom-cursor__overlay">
+<div class="side-menu__block">
+    <div class="side-menu__block-overlay custom-cursor__overlay">
         <div class="cursor"></div>
         <div class="cursor-follower"></div>
-    </div><!-- /.search-popup__overlay -->
-    <div class="search-popup__inner">
-        <form action="#" class="search-popup__form">
-            <input type="text" name="search" placeholder="Type here to Search....">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div><!-- /.search-popup__inner -->
-</div><!-- /.search-popup -->
+    </div><!-- /.side-menu__block-overlay -->
+    <div class="side-menu__block-inner ">
+        <div class="side-menu__top justify-content-end">
+            <a href="#" class="side-menu__toggler side-menu__close-btn"><img
+                    src="assets/images/shapes/close-1-1.png" alt=""></a>
+        </div><!-- /.side-menu__top -->
 
+        <nav class="mobile-nav__container">
+            <!-- content is loading via js -->
+        </nav>
+
+        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+
+        <div class="side-menu__content">
+            <p><a href="mailto:gislmh@naver.com">gislmh@naver.com</a> <br> <a href="tel:010-5850-8885">010-5850-8885</a></p>
+            <!--            <div class="side-menu__social">-->
+            <!--                <a href="#"><i class="fab fa-facebook-square"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-twitter"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-instagram"></i></a>-->
+            <!--                <a href="#"><i class="fab fa-pinterest-p"></i></a>-->
+            <!--            </div>-->
+        </div>
+    </div>
+</div>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -230,7 +250,7 @@
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/jquery.bxslider.min.js"></script>
 <script src="assets/js/appear.js"></script>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- template scripts -->
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/tokenManager.js"></script>
@@ -248,36 +268,70 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone-number').value;
             const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
 
             // 회원가입 데이터 구성
             const requestData = {
                 email: email,
                 name: name,
                 phoneNum: phone,
-                password: password
+                password: password,
+                confirmPassword : confirmPassword
+
             };
 
             // Fetch API로 회원가입 요청 보내기
-            fetch('http://49.247.174.32:8080/auth/signup', {
+            // fetch('http://49.247.174.32:8080/auth/signup', {
+            fetch('http://localhost:8080/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(requestData)
             })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 200) {
-                        alert('회원가입 성공! 로그인 해주세요.');
-                        window.location.href='login.html'
-                        registerForm.reset();
-                    } else {
-                        alert('회원가입 실패: ' + data.message);
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
                     }
+                    return response.json().then(errorData => {
+                        throw new Error(errorData.message);
+                    });
+                })
+                .then(data => {
+                    swal({
+                        title: "성공!",
+                        text: "회원가입에 성공했습니다! 로그인 해주세요!.",
+                        icon: "success",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    }).then(() => {
+                        window.location.href = 'login.html';
+                    });
+
+                    registerForm.reset();  // 폼 초기화
                 })
                 .catch(error => {
-                    console.error('Error:', error);
-                    alert('회원가입 중 오류가 발생했습니다.');
+                    swal({
+                        title: "실패!",
+                        text: "회원가입 중 오류가 발생했습니다 : "+ error.message,
+                        icon: "error",
+                        buttons: {
+                            confirm: {
+                                text: "확인",
+                                value: true,
+                                visible: true,
+                                className: "custom-confirm-btn",
+                                closeModal: true
+                            }
+                        }
+                    });
                 });
         });
     });
