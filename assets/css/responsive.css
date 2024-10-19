@@ -878,9 +878,9 @@
         text-align: center;
         margin-top: 20px;
     }
-    .blog-one__content {
-        padding: 30px 5px 34px;
-    }
+    /*.blog-one__content {*/
+    /*    padding: 30px 5px 34px;*/
+    /*}*/
     .author-one {
         padding: 30px;
         flex-wrap: wrap;

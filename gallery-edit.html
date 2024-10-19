@@ -286,8 +286,8 @@
         }
         // 게시글 상세 정보를 가져와서 폼에 미리 채워주는 함수
         function fetchPostDetails() {
-            // fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}`)
-            fetchWithAuth(`http://localhost:8080/gallery-board/${postId}`)
+            fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}`)
+            // fetchWithAuth(`http://localhost:8080/gallery-board/${postId}`)
                 .then(response => response.json())
                 .then(data => {
                     // 기존 제목과 내용을 텍스트 필드에 미리 채워넣기
@@ -348,8 +348,8 @@
 
 
 
-            // fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}`, {
-            fetchWithAuth(`http://localhost:8080/gallery-board/${postId}`, {
+            fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}`, {
+            // fetchWithAuth(`http://localhost:8080/gallery-board/${postId}`, {
                 method: 'PATCH',
                 body: formData
             })

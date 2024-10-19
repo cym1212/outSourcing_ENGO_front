@@ -327,8 +327,8 @@
 
         // 게시글 상세 조회 함수
         function fetchBoardDetails() {
-            // fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}`)
-            fetchWithAuth(`http://localhost:8080/first-board/${postId}`)
+            fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}`)
+            // fetchWithAuth(`http://localhost:8080/first-board/${postId}`)
                 .then(response => response.json())
                 .then(data => {
                     localStorage.setItem('requestUserId', data.requestUserId);
@@ -414,8 +414,8 @@
                 return;
             }
             if (isLiked) {
-                // fetchWithAuth(`http://49.247.174.32:8080/first-board-like/${postId}/unlike`, {
-                fetchWithAuth(`http://localhost:8080/first-board-like/${postId}/unlike`, {
+                fetchWithAuth(`http://49.247.174.32:8080/first-board-like/${postId}/unlike`, {
+                // fetchWithAuth(`http://localhost:8080/first-board-like/${postId}/unlike`, {
                     method: 'POST'
                 })
                     .then(response => {
@@ -471,8 +471,8 @@
                     });
             } else {
 
-                // fetchWithAuth(`http://49.247.174.32:8080/first-board-like/${postId}/like`, {
-                fetchWithAuth(`http://localhost:8080/first-board-like/${postId}/like`, {
+                fetchWithAuth(`http://49.247.174.32:8080/first-board-like/${postId}/like`, {
+                // fetchWithAuth(`http://localhost:8080/first-board-like/${postId}/like`, {
                     method: 'POST'
                 })
                     .then(response => {
@@ -541,8 +541,8 @@
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        // fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}`, {
-                        fetchWithAuth(`http://localhost:8080/first-board/${postId}`, {
+                        fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}`, {
+                        // fetchWithAuth(`http://localhost:8080/first-board/${postId}`, {
                             method: 'DELETE'
                         })
                             .then(response => {
@@ -604,8 +604,8 @@
 
         // 댓글 조회 함수
         function fetchComments() {
-            // fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments`)
-            fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments`)
+            fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments`)
+            // fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments`)
                 .then(response => response.json())
                 .then(data => {
                     displayComments(data.content);
@@ -762,8 +762,8 @@
                 comments: commentText,
             };
 
-            // fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments/create`, {
-            fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments/create`, {
+            fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments/create`, {
+            // fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -865,8 +865,8 @@
                 }
 
                 // Fetch API를 통해 서버로 수정된 내용 전송
-                // fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments/update/${commentId}`, {
-                fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments/update/${commentId}`, {
+                fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments/update/${commentId}`, {
+                // fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments/update/${commentId}`, {
                     method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'
@@ -963,8 +963,8 @@
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        // fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments/delete/${commentId}`, {
-                        fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments/delete/${commentId}`, {
+                        fetchWithAuth(`http://49.247.174.32:8080/first-board/${postId}/first-board-comments/delete/${commentId}`, {
+                        // fetchWithAuth(`http://localhost:8080/first-board/${postId}/first-board-comments/delete/${commentId}`, {
                             method: 'DELETE'
                         })
                             .then(() => {

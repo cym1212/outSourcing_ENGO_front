@@ -1,4 +1,3 @@
-// Handle logout functionality
 window.handleLogout = function() {
     const accessToken = getAccessToken();
 
@@ -19,10 +18,11 @@ window.handleLogout = function() {
         }).then(() => {
             window.location.href = 'login.html';
         });
-        return; // Make sure to return here to prevent further execution
+        return;
     }
 
-    fetch('http://localhost:8080/auth/logout', {
+    // fetch('http://localhost:8080/auth/logout', {
+    fetch('http://49.247.174.32:8080/auth/logout', {
         method: 'PATCH',
         headers: {
             'Authorization': `Bearer ${accessToken}`,
@@ -95,11 +95,72 @@ window.handleLogout = function() {
         });
 };
 
-// 메뉴 상태를 업데이트하는 함수 (PC 메뉴 전용)
+// 메뉴 상태를 업데이트하는 함수 (모바일 및 PC)
 window.updateMenuState = function() {
     const accessToken = getAccessToken();
-    const loginMenu = document.getElementById('loginMenu');
-    const loginLink = document.querySelector('#loginMenu > a');
+    const desktopLoginMenu = document.querySelector('#loginMenu'); // 데스크톱 메뉴
+    const mobileMenuContainer = document.querySelector('.mobile-nav__container'); // 모바일 메뉴 컨테이너
+
+    // PC 메뉴 상태 업데이트 (드롭다운 유지)
+    if (desktopLoginMenu) {
+        updateLoginLink(desktopLoginMenu, accessToken);
+    } else {
+        console.error('Desktop login menu not found');
+    }
+
+    // 모바일 메뉴 상태 업데이트 (회원가입 독립 메뉴 추가)
+    if (mobileMenuContainer) {
+        updateMobileMenu(mobileMenuContainer, accessToken);
+    } else {
+        console.error('Mobile menu not found');
+    }
+
+    // 고정된 메뉴 상태 업데이트 (처음 로드할 때도 실행)
+    updateStickyMenuState(accessToken);
+};
+
+// 모바일 메뉴에 회원가입 독립 메뉴 추가
+function updateMobileMenu(mobileMenuContainer, accessToken) {
+    let signupMenu = document.getElementById('mobileSignupMenu');
+
+    if (!signupMenu) {
+        // 회원가입 메뉴가 없는 경우 새로 추가
+        signupMenu = document.createElement('li');
+        signupMenu.id = 'mobileSignupMenu';
+        const signupLink = document.createElement('a');
+        signupLink.href = 'sign-up.html';
+        signupLink.textContent = '회원 가입';
+        signupMenu.appendChild(signupLink);
+        mobileMenuContainer.appendChild(signupMenu);
+    }
+
+    // 로그인/로그아웃 상태 업데이트 (모바일 전용)
+    const mobileLoginLink = mobileMenuContainer.querySelector('#loginMenu > a');
+    if (mobileLoginLink) {
+        if (accessToken) {
+            mobileLoginLink.textContent = '로그아웃';
+            mobileLoginLink.setAttribute('href', '#');
+            mobileLoginLink.removeEventListener('click', handleLogin);
+            mobileLoginLink.addEventListener('click', handleLogout);
+        } else {
+            mobileLoginLink.textContent = '로그인';
+            mobileLoginLink.setAttribute('href', 'login.html');
+            mobileLoginLink.removeEventListener('click', handleLogout);
+            mobileLoginLink.addEventListener('click', handleLogin);
+        }
+    } else {
+        console.error("Mobile login link not found");
+    }
+}
+
+// PC 드롭다운 상태 업데이트 함수
+function updateLoginLink(loginMenu, accessToken) {
+    const loginLink = loginMenu.querySelector('a[href="login.html"]');
+
+    if (!loginLink) {
+        console.error("loginLink not found within loginMenu.");
+        return; // loginLink가 없으면 함수 종료
+    }
 
     if (accessToken) {
         loginLink.textContent = '로그아웃';
@@ -112,9 +173,7 @@ window.updateMenuState = function() {
         loginLink.removeEventListener('click', handleLogout);
         loginLink.addEventListener('click', handleLogin);
     }
-
-    updateStickyMenuState(accessToken);
-};
+}
 
 // 고정된 메뉴 상태 업데이트 함수 (PC 메뉴 전용)
 function updateStickyMenuState(accessToken) {
@@ -122,17 +181,24 @@ function updateStickyMenuState(accessToken) {
     if (stickyMenu) {
         const stickyLoginLink = stickyMenu.querySelector('#loginMenu > a');
 
+        if (!stickyLoginLink) {
+            console.error("Sticky login link not found.");
+            return;
+        }
+
         if (accessToken) {
             stickyLoginLink.textContent = '로그아웃';
-            stickyLoginLink.setAttribute('href', '#'); // 로그아웃 기능 연결
-            stickyLoginLink.removeEventListener('click', handleLogin); // 중복 방지
-            stickyLoginLink.addEventListener('click', handleLogout); // 로그아웃 이벤트 연결
+            stickyLoginLink.setAttribute('href', '#');
+            stickyLoginLink.removeEventListener('click', handleLogin);
+            stickyLoginLink.addEventListener('click', handleLogout);
         } else {
             stickyLoginLink.textContent = '로그인';
-            stickyLoginLink.setAttribute('href', 'login.html'); // 로그인 페이지로 이동
-            stickyLoginLink.removeEventListener('click', handleLogout); // 중복 방지
-            stickyLoginLink.addEventListener('click', handleLogin); // 로그인 이벤트 연결
+            stickyLoginLink.setAttribute('href', 'login.html');
+            stickyLoginLink.removeEventListener('click', handleLogout);
+            stickyLoginLink.addEventListener('click', handleLogin);
         }
+    } else {
+        console.error("Sticky menu not found");
     }
 }
 
@@ -149,5 +215,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 스크롤 시 고정 메뉴 업데이트
 document.addEventListener('scroll', function() {
-    updateStickyMenuState(getAccessToken());
+    const accessToken = getAccessToken();
+    updateStickyMenuState(accessToken);
 });
