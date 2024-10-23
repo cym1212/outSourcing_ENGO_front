@@ -72,11 +72,7 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                     <div class="main-nav__left1">
-                        <a href="#" class="side-menu__toggler">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
+
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -136,7 +132,11 @@
                     </div><!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
-
+                        <div class="main-nav__left1">
+                            <a href="#" class="side-menu__toggler">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -263,7 +263,7 @@
         if (!getAccessToken()) {
             swal({
                 title: "Error!",
-                text: "로그인이 필요합니다. " + error.message,
+                text: "로그인이 필요합니다. ",
                 icon: "error",
                 buttons: {
                             confirm: {

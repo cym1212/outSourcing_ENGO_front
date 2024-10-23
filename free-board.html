@@ -72,11 +72,7 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                     <div class="main-nav__left1">
-                        <a href="#" class="side-menu__toggler">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
+
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -136,7 +132,11 @@
                     </div><!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
-
+                        <div class="main-nav__left1">
+                            <a href="#" class="side-menu__toggler">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -179,7 +179,6 @@
                         <th>제목</th>
                         <th>작성자</th>
                         <th>작성일</th>
-                        <th>추천</th>
                         <th>조회</th>
                     </tr>
                     </thead>
@@ -422,8 +421,7 @@
             <td>${((currentPage - 1) * postsPerPage) + (index + 1)}</td>
             <td><a href="#" data-id="${post.id}" class="view-post-link">${post.title}</a></td>
             <td>${post.name}</td>
-            <td>${new Date(post.createdAt).toLocaleDateString()}</td>
-            <td>${post.likeCount}</td>
+            <td>${new Date(post.createdAt).toLocaleDateString().replace(/\s/g, '').replace(/\.$/, '')}</td>
             <td>${post.viewCount}</td>
         `;
                 postsContainer.appendChild(postElement);

@@ -71,11 +71,7 @@
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
 
-                    <div class="main-nav__left1">
-                        <a href="#" class="side-menu__toggler">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
+
 
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
@@ -138,7 +134,11 @@
                     </div><!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
-
+                        <div class="main-nav__left1">
+                            <a href="#" class="side-menu__toggler">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -203,7 +203,7 @@
                             <h3>환경 체험<br>프로그램</h3>
                             <p>차별화된 컨텐츠,<br> 공감교육, <br> 환경마인드 전환</p>
                         </div>
-                        <div class="service_1_img">
+                        <div class="service_1_img index_img_1">
                             <img src="assets/images/resources/environment-education2.avif" alt="Service Image">
                             <div class="hover_box">
                                 <a href="environmental-program.html"><span class="icon-left-arrow"></span></a>
@@ -255,7 +255,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="block-title text-left">
                         <p>About agriculture</p>
-                        <h3>새로운 생각과 비전으로  대한민국의 환경을 <br>지켜가겠습니다.</h3>
+                        <h3 id="index_h3_1">새로운 생각과 비전으로  대한민국의 환경을 <br>지켜가겠습니다.</h3>
                         <div class="leaf">
                             <img src="assets/images/resources/leaf.png" alt="">
                         </div>
@@ -611,9 +611,9 @@
                             <li><a href="#"><i class="far fa-user-circle"></i> ${notice.name}</a></li>
                             <li><a href="#"><i class="far fa-eye"></i> 조회수: ${notice.viewCount}</a></li>
                         </ul>
-                        <h3><a href="notice.html" id="title-${index + 1}">${notice.title}</a></h3>
+                        <h3><a href="notice.html" id="title-${index + 1}">${notice.title.slice(0,10)}..</a></h3>
                         <div class="blog_one_text" id="text-${index + 1}">
-                            <p>${notice.content.slice(0, 100)}...</p> <!-- 첫 100자만 표시 -->
+                            <p>${notice.content.slice(0, 15)}..</p>
                         </div>
                         <div class="read_more_btn">
                             <a href="notice.html"><i class="fa fa-angle-right"></i>Read More</a>
@@ -626,6 +626,8 @@
             noticeContainer.innerHTML += noticeHTML;
         });
     }
+
+
 </script>
 
 

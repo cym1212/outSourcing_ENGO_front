@@ -72,11 +72,7 @@
             <nav class="header-navigation stricky">
                 <div class="container clearfix">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                     <div class="main-nav__left1">
-                        <a href="#" class="side-menu__toggler">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
+
                     <div class="main-nav__left">
                         <a href="index.html" class="main-nav__logo">
                             <img src="assets/images/resources/main-logo2.png" class="main-logo" alt="Awesome Image"/>
@@ -136,7 +132,11 @@
                     </div><!-- /.navbar-collapse -->
 
                     <div class="main-nav__right">
-
+                        <div class="main-nav__left1">
+                            <a href="#" class="side-menu__toggler">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -184,7 +184,7 @@
                 <a href="gallery-edit.html" id="edit-notice3" style="display: block;">수정</a>
                 <a href="" id="delete-notice3" style="display: block;">삭제</a>
                 <a href="gallery.html" id="back-notice3">목록</a>
-                <a href="" id="recommand-notice">추천하기</a>
+<!--                <a href="" id="recommand-notice">추천하기</a>-->
             </div>
 
             <!-- 댓글 섹션 시작 -->
@@ -358,6 +358,7 @@
         function displayBoardDetails(data) {
             const requestId = data.requestUserId;
             const userRole = data.requestUserRole;
+            const formattedDate = new Date(data.createdAt).toLocaleDateString().trim().replace(/\s/g, '').replace(/\.$/, '');
             const baseUrl = 'https://outsourcing-engo.s3.ap-northeast-2.amazonaws.com/'
             let imagesHTML = '';
             data.imageUrls.forEach(url => {
@@ -367,17 +368,16 @@
             detailsTable.innerHTML = `
         <tr>
             <th>이름</th><td>${data.name}</td>
-            <th>작성일</th><td>${new Date(data.createdAt).toLocaleDateString()}</td>
-        </tr>
-        <tr>
-            <th>추천수</th><td>${data.likeCount}</td>
+            <th>작성일</th><td>${formattedDate}</td>
             <th>조회수</th><td>${data.viewCount}</td>
         </tr>
         <tr>
-            <th>제목</th><td colspan="3">${data.title}</td>
+             <th>제목</th><td colspan="5">${data.title}</td>
+
         </tr>
+
         <tr>
-            <td colspan="4" class="content">${data.content}
+            <td colspan="6" class="content">${data.content}
             ${imagesHTML}</td>
         </tr>
 
@@ -397,144 +397,144 @@
         }
 
 
-        let isLiked = false;
-
-        document.getElementById('recommand-notice').addEventListener('click', function (e) {
-            e.preventDefault();
-            if (!getAccessToken()) {
-                swal({
-                    title: "경고!",
-                    text: "로그인이 필요합니다." ,
-                    icon: "error",
-                    buttons: {
-                            confirm: {
-                                text: "확인",
-                                value: true,
-                                visible: true,
-                                className: "custom-confirm-btn",
-                                closeModal: true
-                            }
-                        }
-                }).then(() => {
-                    window.location.href = 'login.html'
-                });
-                return;
-            }
-            if (isLiked) {
-                fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}/unlike`, {
-                // fetchWithAuth(`http://localhost:8080/gallery-board/${postId}/unlike`, {
-                    method: 'POST'
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            isLiked = false;
-                            fetchBoardDetails();
-                            swal({
-                                title: "성공!",
-                                text: "추천이 취소되었습니다." ,
-                                icon: "success",
-                                buttons: {
-                            confirm: {
-                                text: "확인",
-                                value: true,
-                                visible: true,
-                                className: "custom-confirm-btn",
-                                closeModal: true
-                            }
-                        }
-                            });
-                        } else {
-                            swal({
-                                title: "실패!",
-                                text: "추천 취소 중 오류가 발생했습니다." ,
-                                icon: "error",
-                                buttons: {
-                            confirm: {
-                                text: "확인",
-                                value: true,
-                                visible: true,
-                                className: "custom-confirm-btn",
-                                closeModal: true
-                            }
-                        }
-                            });
-                        }
-                    })
-                    .catch(error => {
-                        swal({
-                            title: "실패!",
-                            text: "추천 취소 중 오류가 발생했습니다:"+error.message  ,
-                            icon: "error",
-                            buttons: {
-                            confirm: {
-                                text: "확인",
-                                value: true,
-                                visible: true,
-                                className: "custom-confirm-btn",
-                                closeModal: true
-                            }
-                        }
-                        });
-                    });
-            } else {
-
-                fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}/like`, {
-                // fetchWithAuth(`http://localhost:8080/gallery-board/${postId}/like`, {
-                    method: 'POST'
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            isLiked = true;
-                            fetchBoardDetails();
-                            swal({
-                                title: "성공!",
-                                text: "추천되었습니다." ,
-                                icon: "success",
-                                buttons: {
-                            confirm: {
-                                text: "확인",
-                                value: true,
-                                visible: true,
-                                className: "custom-confirm-btn",
-                                closeModal: true
-                            }
-                        }
-                            });
-                        } else {
-                            swal({
-                                title: "실패!",
-                                text: "추천 취소 중 오류가 발생했습니다." ,
-                                icon: "error",
-                                buttons: {
-                            confirm: {
-                                text: "확인",
-                                value: true,
-                                visible: true,
-                                className: "custom-confirm-btn",
-                                closeModal: true
-                            }
-                        }
-                            });
-                        }
-                    })
-                    .catch(error => {
-                        swal({
-                            title: "실패!",
-                            text: "추천 취소 중 오류가 발생했습니다:" +error.message,
-                            icon: "error",
-                            buttons: {
-                            confirm: {
-                                text: "확인",
-                                value: true,
-                                visible: true,
-                                className: "custom-confirm-btn",
-                                closeModal: true
-                            }
-                        }
-                        });
-                    });
-            }
-        });
+        // let isLiked = false;
+        //
+        // document.getElementById('recommand-notice').addEventListener('click', function (e) {
+        //     e.preventDefault();
+        //     if (!getAccessToken()) {
+        //         swal({
+        //             title: "경고!",
+        //             text: "로그인이 필요합니다." ,
+        //             icon: "error",
+        //             buttons: {
+        //                     confirm: {
+        //                         text: "확인",
+        //                         value: true,
+        //                         visible: true,
+        //                         className: "custom-confirm-btn",
+        //                         closeModal: true
+        //                     }
+        //                 }
+        //         }).then(() => {
+        //             window.location.href = 'login.html'
+        //         });
+        //         return;
+        //     }
+        //     if (isLiked) {
+        //         fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}/unlike`, {
+        //         // fetchWithAuth(`http://localhost:8080/gallery-board/${postId}/unlike`, {
+        //             method: 'POST'
+        //         })
+        //             .then(response => {
+        //                 if (response.ok) {
+        //                     isLiked = false;
+        //                     fetchBoardDetails();
+        //                     swal({
+        //                         title: "성공!",
+        //                         text: "추천이 취소되었습니다." ,
+        //                         icon: "success",
+        //                         buttons: {
+        //                     confirm: {
+        //                         text: "확인",
+        //                         value: true,
+        //                         visible: true,
+        //                         className: "custom-confirm-btn",
+        //                         closeModal: true
+        //                     }
+        //                 }
+        //                     });
+        //                 } else {
+        //                     swal({
+        //                         title: "실패!",
+        //                         text: "추천 취소 중 오류가 발생했습니다." ,
+        //                         icon: "error",
+        //                         buttons: {
+        //                     confirm: {
+        //                         text: "확인",
+        //                         value: true,
+        //                         visible: true,
+        //                         className: "custom-confirm-btn",
+        //                         closeModal: true
+        //                     }
+        //                 }
+        //                     });
+        //                 }
+        //             })
+        //             .catch(error => {
+        //                 swal({
+        //                     title: "실패!",
+        //                     text: "추천 취소 중 오류가 발생했습니다:"+error.message  ,
+        //                     icon: "error",
+        //                     buttons: {
+        //                     confirm: {
+        //                         text: "확인",
+        //                         value: true,
+        //                         visible: true,
+        //                         className: "custom-confirm-btn",
+        //                         closeModal: true
+        //                     }
+        //                 }
+        //                 });
+        //             });
+        //     } else {
+        //
+        //         fetchWithAuth(`http://49.247.174.32:8080/gallery-board/${postId}/like`, {
+        //         // fetchWithAuth(`http://localhost:8080/gallery-board/${postId}/like`, {
+        //             method: 'POST'
+        //         })
+        //             .then(response => {
+        //                 if (response.ok) {
+        //                     isLiked = true;
+        //                     fetchBoardDetails();
+        //                     swal({
+        //                         title: "성공!",
+        //                         text: "추천되었습니다." ,
+        //                         icon: "success",
+        //                         buttons: {
+        //                     confirm: {
+        //                         text: "확인",
+        //                         value: true,
+        //                         visible: true,
+        //                         className: "custom-confirm-btn",
+        //                         closeModal: true
+        //                     }
+        //                 }
+        //                     });
+        //                 } else {
+        //                     swal({
+        //                         title: "실패!",
+        //                         text: "추천 취소 중 오류가 발생했습니다." ,
+        //                         icon: "error",
+        //                         buttons: {
+        //                     confirm: {
+        //                         text: "확인",
+        //                         value: true,
+        //                         visible: true,
+        //                         className: "custom-confirm-btn",
+        //                         closeModal: true
+        //                     }
+        //                 }
+        //                     });
+        //                 }
+        //             })
+        //             .catch(error => {
+        //                 swal({
+        //                     title: "실패!",
+        //                     text: "추천 취소 중 오류가 발생했습니다:" +error.message,
+        //                     icon: "error",
+        //                     buttons: {
+        //                     confirm: {
+        //                         text: "확인",
+        //                         value: true,
+        //                         visible: true,
+        //                         className: "custom-confirm-btn",
+        //                         closeModal: true
+        //                     }
+        //                 }
+        //                 });
+        //             });
+        //     }
+        // });
 
         document.getElementById('delete-notice3').addEventListener('click', function (e) {
             e.preventDefault();
@@ -660,7 +660,7 @@
                     commentElement.innerHTML = `
                 <div class="comment-header3">
                     <span class="comment-author3">작성자 : ${comment.memberName}</span>
-                    <span class="comment-time3">${new Date(comment.modifiedAt).toLocaleString()}</span>
+                    <span class="comment-time3">${new Date(comment.modifiedAt).toLocaleString().replace(/\s/g, '')}</span>
                 </div>
                 <p class="comment-content3">${comment.comments}</p>
                 <div class="button-group3">

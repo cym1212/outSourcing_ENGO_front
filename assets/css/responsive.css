@@ -1303,9 +1303,9 @@
 }
 
 @media (max-width: 767px) {
-    .stricked-menu {
-        display: none;
-    }
+    /*.stricked-menu {*/
+    /*    display: none;*/
+    /*}*/
     .main-nav__search {
         display: none;
     }

@@ -248,16 +248,32 @@
     align-items: center;
     border-radius: 6.25rem; /* 타원형 */
     width: 100%; /* 타원의 너비 */
+    height: 10rem;
     padding: 0.6rem;
     margin-bottom: 1.3rem;
     border: 2px solid #ddd;
 }
 
-.ci_box_img_1 img, .ci_box_img_2 img  {
-    width: 100%;
-    height: 9rem;
-    border-radius: 3.2rem;
+.ci_box_img_1 img  {
+    width: 48%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
 }
+ .ci_box_img_2 img{
+     width: 48%; /* 두 이미지를 각각 48%의 너비로 설정 */
+     height: 100%; /* 자동으로 이미지의 비율을 유지 */
+     border-radius: 3.2rem; /* 각 이미지가 타원 안에 맞게 둥글게 */
+     object-fit: cover;
+ }
+ #symbol-image2 {
+     /*transform: scale(0.99); !* 이미지 크기를 80%로 줄임 *!*/
+     object-fit: contain;
+ }
+ #symbol-image1 {
+     transform: scale(0.9); /* 이미지 크기를 80%로 줄임 */
+ }
+
 
 .ci_box_img_3 img{
     width: 100%;
@@ -549,8 +565,9 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
     font-size: 16px;
+    overflow-x: auto;
 }
 
 .notice-table1 th,
@@ -1502,7 +1519,10 @@
     display: block;
 }
 
-
+.page-wrapper *{
+    word-break: keep-all;
+    white-space: normal;
+}
 /*--------------------------------------------------------------
 # 반응형 쿼리들
 --------------------------------------------------------------*/
@@ -1528,7 +1548,7 @@
     .product_img img {
         width: 140% !important;
         height: 140% !important;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         display: block;
     }
 }
@@ -1629,13 +1649,21 @@
 /*  greeting.html */
 @media (max-width: 1024px) {
 
-    .company_images .company_image {
-        width: 30rem !important; /* 태블릿에서는 너비를 줄임 */
-        margin: 0 auto !important;
+    .best_company .company_image,
+    .company_image {
+        width: auto !important; /* 너비를 자동으로 설정 */
+        margin: 0 auto !important; /* 수평 가운데 정렬 */
     }
-    .best_company .company_image {
-        width: 20rem;
-        margin-left: 1rem !important;
+
+    /*.col-xl-6 {*/
+    /*    display: flex;*/
+    /*    justify-content: center; !* 수평 가운데 정렬 *!*/
+    /*    align-items: center; !* 필요 시 수직 가운데 정렬 *!*/
+    /*}*/
+
+    .col-xl-6 .company_image img {
+        /*width: 20rem !important; !* 태블릿에서 이미지 크기 *!*/
+        height: auto;
     }
 }
 
@@ -1645,18 +1673,26 @@
         font-size: 2.1rem;
         font-weight: bold;
     }
-    .company_images .company_image {
-        width: 20rem !important; /* 모바일에서는 더 작은 너비로 조정 */
-        margin: 0 auto !important;
+
+    .best_company .company_image,
+    .company_image {
+        width: auto !important; /* 너비를 자동으로 설정 */
+        margin: 0 auto !important; /* 수평 가운데 정렬 */
     }
 
-    .best_company .company_image {
-        width: 20rem;
-        align-items: center;
-        /*margin-left: 1rem !important;*/
+    /*.col-xl-6 {*/
+    /*    display: flex;*/
+    /*    justify-content: center; !* 수평 가운데 정렬 *!*/
+    /*    align-items: center; !* 필요 시 수직 가운데 정렬 *!*/
+    /*}*/
+
+    .col-xl-6 .company_image img {
+        /*width: 18rem !important; !* 모바일에서 이미지 크기 *!*/
+        height: auto;
     }
-    .company_images .company_image p {
-        font-size: 1.5rem; /* 모바일에서 폰트 크기 줄임 */
+
+    .company_image p {
+        font-size: 1.5rem; /* 모바일에서 폰트 크기 */
         padding: 2rem;
     }
 }
@@ -1671,13 +1707,16 @@
     .company_consult_image_1 img, .company_consult_image_2 img,
     .company_consult_image_3 img, .company_consult_image_4 img,
     .company_consult_image_5 img {
-        max-width: 30rem; /* 태블릿에서는 이미지 최대 너비를 30rem로 설정 */
+
+
+        display: block;
+        max-width: 100%;
         margin: 0 auto;
     }
 
     .company_consult_content_1, .company_consult_content_2, .company_consult_content_3 {
         text-align: left;
-        padding: 2rem; /* 텍스트 패딩을 rem 단위로 조정 */
+        padding: 2rem;
     }
 }
 
@@ -1685,18 +1724,21 @@
     .company_consult_image_1 img, .company_consult_image_2 img,
     .company_consult_image_3 img, .company_consult_image_4 img,
     .company_consult_image_5 img {
-        max-width: 20rem; /* 모바일에서는 이미지 최대 너비를 20rem로 설정 */
+
+
+        display: block;
+        max-width: 100%;
         margin: 0 auto;
     }
 
     .company_consult_content_1, .company_consult_content_2, .company_consult_content_3 {
         text-align: left;
-        font-size: 1rem; /* 모바일에서 텍스트 크기를 더 작게 조정 */
+        font-size: 1rem;
         padding: 1.5rem;
     }
 
     .consult1 h4, .consult2 h4, .consult3 h4 {
-        font-size: 1.8rem; /* 모바일에서 제목 크기 조정 */
+        font-size: 1.8rem;
     }
 }
 
@@ -1705,82 +1747,121 @@
 /* 태블릿용 미디어 쿼리 */
 @media (max-width: 1024px) {
     .ci_heading {
-        font-size: 1.5rem; /* 폰트 크기 */
-        width: 15rem; /* 가로로 긴 너비 */
-        height: 3rem; /* 세로 높이를 상대적으로 짧게 설정 */
-        border-radius: 1.5rem; /* 가로로 긴 타원을 만들기 위한 border-radius */
+        font-size: 1.5rem;
+        width: 15rem;
+        height: 3rem;
+        border-radius: 1.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto 1rem; /* 가운데 정렬 및 아래 여백 */
+        margin: 0 auto 1rem;
     }
 
     .ci_description {
-        font-size: 2rem; /* 폰트 크기를 줄임 */
+        font-size: 2rem;
     }
 
-    .ci_box_img_1 img, .ci_box_img_2 img, .ci_box_img_3 img {
-        height: 8rem; /* 이미지를 적당히 줄임 */
+    /*.ci_box_img_1 img, .ci_box_img_2 img, .ci_box_img_3 img {*/
+    /*    height: 8rem;*/
+    /*}*/
+
+    /*.ci_box2_1 img {*/
+    /*    width: 20rem;*/
+    /*    height: 22rem;*/
+    /*}*/
+
+    .ci_box_img_1, .ci_box_img_2 {
+        height: 8rem ; /* 타원의 높이를 줄임 */
     }
 
-    .ci_box2_1 img {
-        width: 20rem;
-        height: 22rem; /* 이미지 크기를 좀 더 줄임 */
+    .ci_box_img_3{
+        height: 8rem ;
+        padding: 0;
+    }
+    .ci_box_img_3 img{
+        height: 100% !important;
+
+    }
+    .ci_box_img_1 img, .ci_box_img_2 img {
+        width: 50%; /* 이미지 너비를 조금 더 줄임 */
+        height: auto; /* 높이를 적절히 조정 */
+    }
+
+    #symbol-image1 {
+        transform: scale(0.85); /* 이미지 크기를 더 줄임 */
     }
 
     .ci_section1, .ci_section2 {
-        height: 40rem; /* 전체 높이를 줄임 */
+        height: 40rem;
     }
 
     .ci_box1_1, .ci_box1_2 {
-        flex: 1 1 100%; /* 수직 배치로 변경 */
+        flex: 1 1 100%;
     }
 }
 
 /* 모바일용 미디어 쿼리 */
 @media (max-width: 768px) {
     .ci_heading {
-        font-size: 1rem; /* 폰트 크기 */
-        width: 10rem; /* 가로로 긴 너비 */
-        height: 2rem; /* 세로 높이를 상대적으로 짧게 설정 */
-        border-radius: 1.5rem; /* 가로로 긴 타원을 만들기 위한 border-radius */
+        font-size: 1rem;
+        width: 10rem;
+        height: 2rem;
+        border-radius: 1.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 auto 1rem; /* 가운데 정렬 및 아래 여백 */
+        margin: 0 auto 1rem;
     }
 
     .ci_description {
-        font-size: 1.2rem; /* 폰트 크기를 줄임 */
+        font-size: 1.2rem;
     }
     .ci_caption{
         font-size: 1.2rem !important;
     }
 
 
-    .ci_box_img_1 img, .ci_box_img_2 img, .ci_box_img_3 img {
-        height: 7rem; /* 이미지를 더 작게 줄임 */
+    /*.ci_box_img_1 img, .ci_box_img_2 img, .ci_box_img_3 img {*/
+    /*    height: 7rem;*/
+    /*}*/
+
+    /*.ci_box2_1 img {*/
+    /*    width: 18rem;*/
+    /*    height: 20rem;*/
+    /*}*/
+
+
+    .ci_box_img_1, .ci_box_img_2, .ci_box_img_3 {
+        height: 6.5rem; /* 타원의 높이를 더 줄임 */
     }
 
-    .ci_box2_1 img {
-        width: 18rem;
-        height: 20rem; /* 모바일에 맞게 이미지 크기 조정 */
+    .ci_box_img_1 img, .ci_box_img_2 img {
+        width: 50%; /* 모바일에서 이미지 너비를 더 줄임 */
+        height: auto; /* 높이를 더 줄임 */
+        object-fit: contain; /* 이미지 비율 유지 */
     }
 
+    #symbol-image1 {
+        transform: scale(0.8); /* 이미지 크기를 80%로 줄임 */
+    }
+
+    #symbol-image2 {
+        object-fit: contain; /* 모바일에서 이미지가 비율을 유지하면서 맞도록 설정 */
+    }
     .ci_section1, .ci_section2 {
-        height: auto; /* 모바일에서 높이를 자동으로 조정 */
+        height: auto;
     }
 
     .ci_box1_1, .ci_box1_2 {
-        flex: 1 1 100%; /* 수직 배치 */
+        flex: 1 1 100%;
     }
 
     .ci_logos {
-        flex-direction: column; /* 로고를 수직으로 배치 */
+        flex-direction: column;
     }
 
     .ci_colors {
-        flex-direction: column; /* 색상도 수직으로 배치 */
+        flex-direction: column;
     }
 }
 
@@ -1789,35 +1870,35 @@
 @media (max-width: 1024px) {
     /* 전체 레이아웃 및 텍스트 크기 조정 */
     .education-section1_1 > p {
-        font-size: 2.5rem; /* 텍스트 크기를 줄임 */
+        font-size: 2.5rem;
     }
 
     .education-section2 img {
-        width: 4rem; /* 화살표 이미지 크기 조정 */
+        width: 4rem;
         height: 6rem;
     }
 
     /* step 박스 크기 조정 */
     .step-box {
-        width: 48%; /* 각 step 박스가 50%에서 48%로 조정됨 */
-        padding: 15px; /* padding을 줄임 */
+        width: 48%;
+        padding: 15px;
     }
 
     /* 단계 라벨 크기 조정 */
     .step-label {
-        padding: 8px; /* padding을 줄임 */
-        font-size: 0.9rem; /* 라벨 글자 크기를 줄임 */
+        padding: 8px;
+        font-size: 0.9rem;
     }
 
     .step-content h3 {
-        font-size: 16px; /* 제목 글자 크기를 줄임 */
+        font-size: 16px;
     }
 
     .step-content p {
-        font-size: 12px; /* 본문 글자 크기를 줄임 */
+        font-size: 12px;
     }
     .info-box {
-        padding: 15px; /* padding을 줄임 */
+        padding: 15px;
     }
 
     .info-icon img {
@@ -1826,23 +1907,23 @@
     }
 
     .info-box h3 {
-        font-size: 0.95rem; /* 제목 폰트 크기 줄임 */
+        font-size: 0.95rem;
     }
 
     .info-box p {
-        font-size: 0.7rem; /* 본문 폰트 크기 줄임 */
+        font-size: 0.7rem;
     }
     .experience-header h2 {
-        font-size: 2rem; /* 텍스트 크기 조정 */
+        font-size: 2rem;
     }
 
     .experience-content {
-        flex-direction: column; /* 수직 배치 */
-        gap: 30px; /* 상하 간격 */
+        flex-direction: column;
+        gap: 30px;
     }
 
     .text-container {
-        gap: 15px; /* 텍스트 상하 간격 줄임 */
+        gap: 15px;
     }
     .program_1 h3{
         font-size: 1.2rem !important;    ;
@@ -1856,98 +1937,161 @@
 @media (max-width: 768px) {
     /* 교육 섹션 텍스트 크기 조정 */
     .education-section1_1 > p {
-        font-size: 2rem; /* 텍스트 크기 줄임 */
+        font-size: 2rem;
     }
 
     .education-section2 img {
-        width: 3rem; /* 화살표 이미지 크기 줄임 */
+        width: 3rem;
         height: 5rem;
     }
 
     /* step 부분을 한 줄에 하나씩 배치하도록 조정 */
     .step-row {
-        flex-direction: column; /* 수직 배치 */
-        gap: 20px; /* 각 step 사이의 간격 */
+        flex-direction: column;
+        gap: 20px;
     }
 
     /* step 박스 크기 조정 */
     .step-box {
-        width: 100%; /* step 박스가 한 줄에 하나씩 배치되도록 */
-        padding: 15px; /* padding을 조금 줄임 */
+        width: 100%;
+        padding: 15px;
     }
 
     /* 단계 라벨 크기 조정 */
     .step-label {
         padding: 8px;
-        font-size: 0.9rem; /* 라벨 글자 크기를 줄임 */
+        font-size: 0.9rem;
     }
 
     .step-content h3 {
-        font-size: 14px; /* 제목 글자 크기 줄임 */
+        font-size: 14px;
     }
 
     .step-content p {
-        font-size: 12px; /* 본문 글자 크기 줄임 */
-        line-height: 1.5; /* 줄 간격 조정 */
+        font-size: 12px;
+        line-height: 1.5;
     }
     .info-section {
-        flex-direction: column; /* 수직 배치 */
+        flex-direction: column;
         align-items: center;
     }
 
     .info-box {
-        width: 100%; /* info-box를 100% 너비로 설정 */
+        width: 100%;
         padding: 15px;
-        margin-bottom: 20px; /* 박스 사이에 간격 추가 */
+        margin-bottom: 20px;
     }
 
     .info-icon img {
-        width: 4rem; /* 아이콘 크기를 더 작게 */
+        width: 4rem;
         height: 4rem;
     }
 
     .info-box h3 {
-        font-size: 1.2rem; /* 제목 폰트 크기 줄임 */
+        font-size: 1.2rem;
     }
 
     .info-box p {
-        font-size: 0.9rem; /* 본문 폰트 크기 줄임 */
+        font-size: 0.9rem;
     }
     .experience-header h2 {
-        font-size: 1.2rem; /* 텍스트 크기 줄임 */
+        font-size: 1.2rem;
     }
 
     /* 모바일에서 이미지와 텍스트를 수직 배치 */
     .experience-content {
-        flex-direction: column; /* 수직 배치 */
+        flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
     .image-container img {
-        width: 100%; /* 이미지를 전체 너비로 설정 */
+        width: 100%;
         height: auto;
     }
 
     .text-container {
         width: 100%;
-        gap: 20px; /* 텍스트 상하 간격 */
+        gap: 20px;
     }
 
     .experience-info p {
-        font-size: 0.95rem; /* 텍스트 크기를 줄임 */
+        font-size: 0.95rem;
     }
 
     .service-box h3 {
-        font-size: 1.5rem; /* 서비스5 박스 제목 크기 조정 */
+        font-size: 1.5rem;
     }
 
     .service-box p {
-        font-size: 1rem; /* 서비스 박스 본문 크기 조정 */
+        font-size: 1rem;
     }
 }
 
 /*--- 게시판 ---*/
+@media (max-width: 1024px) {
+    .notice-table1 table, .notice-table2 table, .notice-table3 table, .notice-table4 table {
+        width: 100%;
+        table-layout: auto;
+        overflow-x: auto !important; /* 수평 스크롤 가능 */
+    }
+
+    /* 각 열의 너비 설정 */
+    .notice-table1 th, .notice-table1 td,
+    .notice-table2 th, .notice-table2 td,
+    .notice-table3 th, .notice-table3 td,
+    .notice-table4 th, .notice-table4 td {
+        padding: 3px;
+        text-align: center;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    /*.notice-table1 td, .notice-table1 th,.notice-table2 td, .notice-table2 th,.notice-table3 td, .notice-table3 th,.notice-table4 td, .notice-table4 th {*/
+    /*    padding: 3px;*/
+    /*    text-align: center;*/
+    /*    font-size: 0.8rem;*/
+    /*    white-space: nowrap;*/
+    /*    width: 100%;*/
+    /*}*/
+    .notice-table1 td a,.notice-table2 td a,.notice-table3 td a,.notice-table4 td a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    /* 테이블 열 비율 설정 */
+    .notice-table1 th:nth-child(1), .notice-table1 td:nth-child(1),
+    .notice-table2 th:nth-child(1), .notice-table2 td:nth-child(1),
+    .notice-table3 th:nth-child(1), .notice-table3 td:nth-child(1),
+    .notice-table4 th:nth-child(1), .notice-table4 td:nth-child(1) {
+        width: 5%;
+    }
+
+    .notice-table1 th:nth-child(2), .notice-table1 td:nth-child(2),
+    .notice-table2 th:nth-child(2), .notice-table2 td:nth-child(2),
+    .notice-table3 th:nth-child(2), .notice-table3 td:nth-child(2),
+    .notice-table4 th:nth-child(2), .notice-table4 td:nth-child(2) {
+        width: 60%;
+    }
+
+    .notice-table1 th:nth-child(3), .notice-table1 td:nth-child(3),
+    .notice-table2 th:nth-child(3), .notice-table2 td:nth-child(3),
+    .notice-table3 th:nth-child(3), .notice-table3 td:nth-child(3),
+    .notice-table4 th:nth-child(3), .notice-table4 td:nth-child(3),
+    .notice-table1 th:nth-child(4), .notice-table1 td:nth-child(4),
+    .notice-table2 th:nth-child(4), .notice-table2 td:nth-child(4),
+    .notice-table3 th:nth-child(4), .notice-table3 td:nth-child(4),
+    .notice-table4 th:nth-child(4), .notice-table4 td:nth-child(4) {
+        width: 15%;
+    }
+
+    .notice-table1 th:nth-child(6), .notice-table1 td:nth-child(6),
+    .notice-table2 th:nth-child(6), .notice-table2 td:nth-child(6),
+    .notice-table3 th:nth-child(6), .notice-table3 td:nth-child(6),
+    .notice-table4 th:nth-child(6), .notice-table4 td:nth-child(6) {
+        width: 5%;
+    }
+}
 
 /* 모바일용 미디어 쿼리 */
 @media (max-width: 768px) {
@@ -1955,46 +2099,117 @@
     .notice-table1 table,.notice-table2 table,.notice-table3 table,.notice-table4 table {
         width: 100%;
         display: block;
-        overflow-x: auto; /* 수평 스크롤 가능 */
-        white-space: nowrap; /* 텍스트가 한 줄로 표시되게 함 */
+        overflow-x: auto;
+        white-space: nowrap;
     }
     .notice-table1 > tr, .notice-table2 > tr, .notice-table3 > tr, .notice-table4 > tr{
         text-align: left;
+        width: 100%;
     }
 
     /* 각 테이블 열의 텍스트를 한 줄로 유지하고, 줄 바꿈 방지 */
     .notice-table1 td, .notice-table1 th,.notice-table2 td, .notice-table2 th,.notice-table3 td, .notice-table3 th,.notice-table4 td, .notice-table4 th {
-        padding: 10px;
-        text-align: left;
-        font-size: 0.9rem;
+        padding: 3px;
+        text-align: center;
+        font-size: 0.8rem;
         white-space: nowrap;
+        width: 100%;
     }
     .notice-table1 th {
         text-align: center;
-        vertical-align: middle; /* 필요하면 수직 중앙 정렬 */
+        vertical-align: middle;
     }
     /* 긴 제목이 있을 경우 텍스트가 넘치지 않도록 처리 */
     .notice-table1 td a,.notice-table2 td a,.notice-table3 td a,.notice-table4 td a {
         display: block;
         overflow: hidden;
-        text-overflow: ellipsis; /* 긴 텍스트 말줄임 처리 */
+        text-overflow: ellipsis;
         white-space: nowrap;
+    }
+    .notice-table1 th:nth-child(1),.notice-table2 th:nth-child(1),.notice-table3 th:nth-child(1),.notice-table4 th:nth-child(1) {
+        font-size: 0.6rem;
+    }
+
+
+    .notice-table1 th:nth-child(1), .notice-table1 td:nth-child(1) {
+        max-width: 10px;
+    }
+    .notice-table1 th:nth-child(2), .notice-table1 td:nth-child(2) {
+        min-width: 180px;
+    }
+    .notice-table1 th:nth-child(3), .notice-table1 td:nth-child(3) {
+        min-width: 15px;
+    }
+    .notice-table1 th:nth-child(4), .notice-table1 td:nth-child(4) {
+        min-width: 15px;
+    }
+    .notice-table1 th:nth-child(6), .notice-table1 td:nth-child(6) {
+        min-width: 10px;
+    }
+
+    .notice-table2 th:nth-child(1), .notice-table2 td:nth-child(1) {
+        max-width: 10px;
+    }
+    .notice-table2 th:nth-child(2), .notice-table2 td:nth-child(2) {
+        min-width: 180px;
+    }
+    .notice-table2 th:nth-child(3), .notice-table2 td:nth-child(3) {
+        min-width: 15px;
+    }
+    .notice-table2 th:nth-child(4), .notice-table2 td:nth-child(4) {
+        min-width: 15px;
+    }
+    .notice-table2 th:nth-child(6), .notice-table2 td:nth-child(6) {
+        min-width: 10px;
+    }
+
+    .notice-table3 th:nth-child(1), .notice-table3 td:nth-child(1) {
+        max-width: 10px;
+    }
+    .notice-table3 th:nth-child(2), .notice-table3 td:nth-child(2) {
+        min-width: 180px;
+    }
+    .notice-table3 th:nth-child(3), .notice-table3 td:nth-child(3) {
+        min-width: 15px;
+    }
+    .notice-table3 th:nth-child(4), .notice-table3 td:nth-child(4) {
+        min-width: 15px;
+    }
+    .notice-table3 th:nth-child(6), .notice-table3 td:nth-child(6) {
+        min-width: 10px;
+    }
+
+    /* 테이블 각 열에 대한 최소 너비 설정 */
+    .notice-table4 th:nth-child(1), .notice-table4 td:nth-child(1) {
+        max-width: 10px;
+    }
+    .notice-table4 th:nth-child(2), .notice-table4 td:nth-child(2) {
+        min-width: 180px;
+    }
+    .notice-table4 th:nth-child(3), .notice-table4 td:nth-child(3) {
+        min-width: 15px;
+    }
+    .notice-table4 th:nth-child(4), .notice-table4 td:nth-child(4) {
+        min-width: 15px;
+    }
+    .notice-table4 th:nth-child(6), .notice-table4 td:nth-child(6) {
+        min-width: 10px;
     }
 
     /* 검색 버튼 크기 조정 */
     .search-container1,.search-container2,.search-container3,.search-container4 {
         display: flex;
-        flex-direction: column; /* 검색 박스 수직 배치 */
+        flex-direction: column;
         gap: 10px;
     }
 
     #search-type1, #search-input1, #search-button1,#search-type2, #search-input2, #search-button2,#search-type3, #search-input3, #search-button3,#search-type4, #search-input4, #search-button4 {
-        width: 100%; /* 검색 입력 필드 전체 너비 사용 */
-        font-size: 0.9rem; /* 글자 크기 조정 */
+        width: 100%;
+        font-size: 0.9rem;
         padding: 3px !important;
     }
     #search-type1 option,#search-type2 option,#search-type3 option,#search-type4 option {
-        font-size: 1.2rem !important; /* 옵션 글씨 크기 */
+        font-size: 1.2rem !important;
     }
 
 
@@ -2003,23 +2218,23 @@
 @media (max-width: 768px) {
     .search-container1,.search-container2,.search-container3,.search-container4 {
         display: flex;
-        flex-direction: row; /* 가로로 나열 */
-        justify-content: space-between; /* 요소 간의 간격 조정 */
-        align-items: center; /* 수직 중앙 정렬 */
-        gap: 10px; /* 요소 간의 간격 */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
     }
 
     .custom-select-container {
-        flex: 1; /* 선택박스가 가변적으로 너비를 차지 */
+        flex: 1;
     }
 
     #search-input1,#search-input2,#search-input3,#search-input4 {
-        flex: 2; /* 검색 입력창이 더 많은 너비 차지 */
+        flex: 2;
     }
 
     #search-button1,#search-button2,#search-button3,#search-button4 {
-        flex: 0.5; /* 버튼의 너비를 작게 설정 */
-        width: auto; /* 버튼 너비가 자동으로 조정되도록 설정 */
+        flex: 0.5;
+        width: auto;
     }
 
     /* 드롭다운 항목이 너무 넓어지지 않도록 조절 */
@@ -2027,6 +2242,87 @@
         font-size: 1.2rem;
     }
 }
+/*--now--*/
+
+@media (max-width: 768px) {
+    #main-title {
+        font-size: 3.5rem !important;
+        word-break: keep-all;
+        white-space: normal;
+
+    }
+    #main-title2{
+        font-size: 1rem !important;
+        word-break: keep-all;
+        white-space: normal;
+    }
+    .sub-title{
+        font-size: 1rem !important;
+        word-break: keep-all;
+        white-space: normal;
+    }
+
+    .service_1_img img {
+        width: 100%;
+        object-fit: cover;
+        object-position:center;
+    }
+
+    .about1_img{
+        text-align: center;
+    }
+
+    #index_h3_1{
+        font-size: 2.2rem !important;
+        word-break: keep-all;
+        white-space: normal;
+    }
+    .about1_icon_single p{
+        word-break: keep-all;
+        white-space: normal;
+    }
+
+    .thm-btn.about_one__btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        width: auto;
+    }
+    .video-one h3{
+        font-size: 3rem !important;
+        word-break: keep-all;
+        white-space: normal;
+    }
+    .video-one p {
+        font-size: 1rem !important;
+        word-break: keep-all;
+        white-space: normal;
+    }
+    #main_page_image2{
+        text-align: center;
+    }
+
+   #notice-content-1{
+       width: 100%;
+   }
+
+
+
+    /* 모바일 화면에서만 적용 */
+    @media (max-width: 768px) {
+        .brand-one-carousel .single_brand_item img {
+            width: 100%; /* 로고 크기 조정 */
+            height: auto; /* 비율 유지 */
+            margin-left: 0 ; /* 중앙 정렬 */
+        }
+        .brand-one{
+            padding: 75px 0 50px 0 !important;
+        }
+    }
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
@@ -3808,9 +4104,9 @@ h6 {
     outline: none;
     background-color: transparent;
     color: #9ca3a9;
-    font-size: 14px;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 18px;
+    padding-left: 12px;
+    padding-right: 12px;
     width: auto;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -4714,7 +5010,7 @@ h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.6);
     background-blend-mode: darken;
 }
 
@@ -10957,7 +11253,7 @@ h6 {
     padding: 120px 0 120px;
 }
 .company_image {
-    margin-right: 82px;
+    margin-right: 80px;
 }
 .company_image img {
     width: 100%;
